@@ -1,0 +1,40 @@
+category,role,accession,note
+GEO,discovery,GSE32863,LUAD
+GEO,validation,GSE19804,LUAD
+GEO,validation,GSE10072,LUAD
+GEO,discovery,GSE44076,CRC
+GEO,validation,GSE41258,CRC
+GEO,validation,GSE23878,CRC
+GEO,discovery,GSE27342,STAD
+GEO,validation,GSE63089,STAD
+GEO,validation,GSE13911,STAD
+GEO,discovery,GSE15471,PAAD
+GEO,validation,GSE28735,PAAD
+GEO,validation,GSE62452,PAAD
+GEO,discovery,GSE57957,HCC
+GEO,validation,GSE62232,HCC
+GEO,discovery,GSE23400,ESCC
+GEO,validation,GSE20347,ESCC
+GEO,discovery,GSE75214,IBD
+GEO,validation,GSE87473,IBD
+GEO,validation,GSE179285,IBD
+GEO,secondary,GSE16879,IBD
+GEO,discovery,GSE76925,COPD
+GEO,validation,GSE47460,COPD
+GEO,discovery,GSE33814,NAFLD
+GEO,validation,GSE66676,NAFLD
+GEO,discovery,GSE4302,Asthma
+GEO,validation,GSE43696,Asthma
+GEO,validation,GSE67472,Asthma
+External cohort,validation,GSE39582,CRC OS (independent)
+External cohort,validation,GSE21501,PDAC OS (independent)
+External cohort,downloaded,GSE62254,ACRG STAD expression (OS via Cristescu 2015 supplementary)
+External cohort,downloaded,GSE15459,STAD expression (no OS in GEO)
+cBioPortal/TCGA,OS/expression,paad_tcga_gdc,six-cancer layer; PAAD subtype
+cBioPortal/TCGA,,esca_tcga_gdc; luad_tcga_gdc; coadread_tcga_pan_can_atlas_2018; stad_tcga_gdc; lihc_tcga_pan_can_atlas_2018,
+CPTAC proteomics,,paad_cptac_2021; luad_cptac_2020; coad_cptac_2019,RNA-protein anchors
+CELLxGENE,single cell,LUAD 01ff5cf0; CRC 829a3cd1; IBD 9bfecd44; STAD 0d3807bf,
+GEO single cell,single cell,GSE193816,asthma
+DepMap,dependency,"24Q4 (CRISPRGeneEffect, Model)",
+Paper supplement,survival/clinical,Cristescu 2015 Nat Med (nm.3850) supplementary (ACRG OS),
+Paper supplement,classifier,Moffitt 2015 Nat Genet (ng.3398) supplementary Table S2 (gene loadings),

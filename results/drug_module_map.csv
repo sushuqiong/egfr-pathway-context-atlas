@@ -1,0 +1,18 @@
+module,drug_class,agents_and_status
+ERBB_RECEPTORS,EGFR TKI/mAb,"gefitinib/erlotinib/osimertinib(EGFR-mut), cetuximab/panitumumab, trastuzumab(ERBB2)"
+ERBB_LIGANDS,anti-EGFR ligand blockade,cetuximab/panitumumab (CRC RAS-wt); investigational ligand-axis agents
+RAS_MAPK,MEK/RAF/pan-RAS,trametinib/cobimetinib(MEK); sotorasib/adagrasib(KRAS G12C); encorafenib(BRAF)
+PI3K_AKT,PI3K/AKT/mTOR,"alpelisib(PI3KCA), everolimus/temsirolimus(mTOR), capivasertib(AKT)"
+FGFR_AXIS,FGFR inhibitor,"erdafitinib, pemigatinib, futibatinib, infigratinib"
+VEGF_PDGF_AXIS,anti-angiogenic,"bevacizumab(VEGF), ramucirumab(VEGFR2), lenvatinib/sorafenib/sunitinib(多靶点, 含VEGFR/PDGFR)"
+PDGFR_KIT_CSF1R,KIT/PDGFR/CSF1R inhibitor,"imatinib/sunitinib(KIT/PDGFR), pexidartinib(CSF1R)"
+HGF_MET_AXIS,MET inhibitor,"capmatinib, tepotinib, crizotinib(兼ALK/ROS1)"
+TAM_AXL_AXIS,AXL/MERTK inhibitor (investigational),bemcentinib等II期; 无批准适应症
+IGF_INSR_AXIS,"IGF1R antibody (investigational, 历史III期阴性)",figitumumab/cixutumumab等; 多数已停止
+RET_ALK_NTRK,RET/ALK/ROS1/NTRK inhibitor,"selpercatinib/pralsetinib(RET), alectinib/crizotinib(ALK), entrectinib/larotrectinib(NTRK), crizotinib(ROS1)"
+EPH_RECEPTORS,EPH/Ephrin (investigational),无批准药; 多肽/抗体在早期临床
+TIE_ANGPT_AXIS,Ang/Tie2 (investigational),trebananib等III期未达终点; 无批准
+JAK_STAT,JAK inhibitor,"tofacitinib/upadacitinib(UC批准), baricitinib(RA), ruxolitinib(MPN)"
+SRC_FAK,SRC/FAK inhibitor (investigational),"dasatinib(SRC/ABL已批其他适应症), defactinib(FAK)试验中"
+TGFB_SMAD,TGFβ pathway (investigational),galunisertib等II期; 无批准
+WNT_CTNNB1,WNT/β-catenin (investigational),无批准; porcupine抑制剂(trial)等
