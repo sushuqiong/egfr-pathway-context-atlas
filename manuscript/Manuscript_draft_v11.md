@@ -128,7 +128,7 @@ Across 27 public transcriptomic cohorts, growth-factor module expression was str
 
 **Figure 1. Parallel evidence layers.** Twenty-seven case-control cohorts (ten contexts) and 17 modules were assessed through non-hierarchical layers; numbers are per-cohort robust (55/170), common-denominator meta-analysis (REML/Hartung-Knapp 17; DerSimonian-Laird 74), two-model composition comparison (21 robust), single-cell localization (16 same-cell-type comparisons, of which 10 paired; 12 cell-identity contrasts labelled separately), TCGA prognosis (17/108 FDR<0.05) and external validation (CRC GSE39582 556/187; PDAC GSE21501 102/66; ACRG 300/152). Layers are shown in parallel because states can pass later layers without passing earlier ones (for example, STAD contributes nine composition-robust states but no meta-significant state).
 
-**Figure 2. Module states before and after composition adjustment.** (A) Raw median standardized mean difference across ten contexts (asterisk = per-cohort-robust; digits = number of cohorts with FDR<0.05). (B) Adjusted-model estimates from the two-model comparison (fill = median adjusted coefficient in SD units of the shared reference SD; digits = cohorts with adjusted FDR<0.05; filled diamonds = composition-robust states; "n.e." = not estimable). Module labels are harmonised across panels; the xCell residualization sensitivity is Supplementary Figure S2.
+**Figure 2. Module states before and after composition adjustment.** (A) Raw median standardized mean difference across ten contexts (black-bordered tiles = per-cohort-robust; digits = number of cohorts with FDR<0.05). (B) Adjusted-model estimates from the two-model comparison (fill = median adjusted coefficient in SD units of the shared reference SD; digits = cohorts with adjusted FDR<0.05; black-bordered tiles = composition-robust states; "n.e." = not estimable). Module labels are harmonised across panels; the xCell residualization sensitivity is Supplementary Figure S2.
 
 **Figure 3. Base versus adjusted disease coefficients.** For all 170 states, the base-model coefficient (x-axis) is plotted against the adjusted-model coefficient (y-axis), both in the same outcome units; red = composition-robust; dashed line = identity. The median ratio is 0.87, i.e. attenuation is typically modest.
 
@@ -138,7 +138,7 @@ Across 27 public transcriptomic cohorts, growth-factor module expression was str
 
 **Figure 6. Single-cell comparisons with pairing information.** Left: same-cell-type comparisons reaching family-wise FDR<0.05, labelled with the number of complete patient pairs (paired signed-rank) or with case/control patient numbers (unpaired). Right: cell-identity contrasts (malignant cells versus normal-tissue epithelium), labelled separately and not interpreted as same-cell-type disease effects.
 
-**Supplementary Figure S1. Marker-proxy versus xCell medians.** **Supplementary Figure S2. xCell two-step residualization heatmap (sensitivity).**
+**Supplementary Figure S1. Marker-proxy versus xCell medians.** **Supplementary Figure S2. xCell two-step residualization heatmap (sensitivity; black-bordered tiles = robust under this sensitivity).**
 
 ## Tables
 

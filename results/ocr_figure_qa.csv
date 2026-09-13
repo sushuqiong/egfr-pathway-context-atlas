@@ -1,0 +1,10 @@
+﻿file,size,words,median_text_h_px,below_7pt,clipping,overlaps,missing
+fig1_parallel_layers_v11.png,2008x1532,147,33,144,0,0,
+fig2a_raw_v11.png,2010x1680,55,30,7,0,0,
+fig2b_adjusted_v11.png,2010x1680,51,30,3,0,0,
+fig3_base_vs_adjusted_v11.png,2010x1500,36,34,13,0,0,
+fig4_survival_v11.png,2010x1740,77,34,45,0,0,
+fig5_molecular_v11.png,2010x1920,60,40,48,0,0,
+fig6_sc_v11.png,2010x2628,237,36,196,0,0,
+fig_paper_xcell_vs_marker.png,2010x1470,32,37,6,0,0,
+fig_paper_xcell_heatmap.png,2010x1680,57,37,26,0,0,
