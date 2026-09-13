@@ -19,7 +19,8 @@ run <- function(expr, meta_order=NULL){
   if(!is.null(meta_order)){ y <- y[match(meta_order, colnames(expr))]; p <- pid[match(meta_order, m$sample_id)]; g <- grp[match(meta_order, m$sample_id)]
   } else { p <- pid; g <- grp }
   cc <- intersect(p[g=="Case"], p[g=="Control"])
-  yc <- y[match(cc, p[g=="Case"])]; yr <- y[match(cc, p[g=="Control"])]
+  y_case <- y[g=="Case"]; y_ctrl <- y[g=="Control"]
+  yc <- y_case[match(cc, p[g=="Case"])]; yr <- y_ctrl[match(cc, p[g=="Control"])]
   ri <- cor(yc, yr)
   es <- metafor::escalc(measure="SMCRH", m1i=mean(yc), m2i=mean(yr), sd1i=sd(yc), sd2i=sd(yr), ri=ri, ni=length(cc))
   hand <- (mean(yc)-mean(yr))/sqrt((var(yc)+var(yr))/2)

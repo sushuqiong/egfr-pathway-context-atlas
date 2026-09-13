@@ -5,7 +5,7 @@
 ## A. Bug 确认与修复（均已定位到代码）
 | # | GPT6 指控 | 核实 | 修复 |
 |---|---|---|---|
-| 1 | 配对索引错误（病例/对照索引误用于整条向量） | **成立**：`y[match(cm, pv)]` 用整向量索引子集位置 → 配对相关恒为 1、var 缺失、200 条配对记录全被丢弃 | 重写为显式子集（`yc=y[match(cc,pidv[iscase])]` 等），改用 **metafor::escalc(measure="SMCRH", ri=实证)**；现 **200/200 配对记录全部可估**（median r_emp=0.99），ρ=0.5/0.7 敏感性结果一致 |
+| 1 | 配对索引错误（病例/对照索引误用于整条向量） | **成立**：`y[match(cm, pv)]` 用整向量索引子集位置 → 配对相关恒为 1、var 缺失、200 条配对记录全被丢弃 | 重写为显式子集（`yc=y[match(cc,pidv[iscase])]` 等），改用 **metafor::escalc(measure="SMCRH", ri=实证)**；现 **200/200 配对记录全部可估**（median r_emp=0.11；另经第二轮修复：先取子集值再按 ID 匹配，并用 tests/check_paired_effect.R 三检验验证），ρ=0.5/0.7 敏感性结果一致 |
 | 2 | meta 筛选误伤联合模型汇总（先删 var 缺失再汇总 joint） | **成立** → v9 "6 个稳健" 为程序筛选假象 | 联合汇总独立纳入（仅要求 p_adj 有限，逐队列 BH 后按规则），并输出四类状态：**robust 21 / estimated-ns 95 / estimated 54 / not analysed 0** |
 | 3 | GSE39582 混入非肿瘤（17 例/3 事件）+ 分期解析错误 | **成立**：`dataset:ch1`=Non Tumoral 未排除；`tnm.stage` 为数字 0-4 而脚本只认罗马数字 | 肿瘤筛选 → **556/187**（原 573/190）；数字分期修复（1-4 期 552 例；0 期 4 例单独处理）；三位模型 + 95%CI + BH |
 
@@ -13,8 +13,8 @@
 | 指标 | v9（有 bug） | **v10（修正）** |
 |---|---|---|
 | 逐队列稳健 | 55/170 | 55/170（不变）|
-| Meta REML/Hartung–Knapp（BH）| 11 | **7**（IBD 6：ERBB-R↓/HGF-MET/JAK-STAT/SRC-FAK/TIE/VEGF + COPD SRC-FAK↓）|
-| Meta DL（BH）| 31 | **20**（IBD 11、COPD 5、Asthma 4）|
+| Meta REML/Hartung–Knapp（BH）| 11 | **18**（CRC 8、IBD 6、LUAD 2、PAAD 1 RAS-MAPK、COPD 1；固定 ρ=0.5/0.7 下 19）|
+| Meta DL（BH）| 31 | **76**（CRC 12、LUAD 12、IBD 11、STAD 9、PAAD 8、ESCC 7、HCC 7、COPD 5、Asthma 5）|
 | 联合模型组成稳健 | 6（假象）| **21**（CRC 10、STAD 9、ESCC 1、IBD 1；PAAD 0）|
 | CRC 外部 VEGF/PDGF | HR 1.21 复现 | **HR 1.16 (p=0.042)；age 校正 1.15 (p=0.049)；age+stage 校正 1.09 (p=0.217) → 不能称"外部复现"** |
 | CRC 外部其它 | — | FGFR 1.15 (p=0.048)、IGF/INSR 1.16 (p=0.045) 分期校正后名义；EPH 0.88 (p=0.09)；ERBB-lig/WNT/PDGFR 均 null |

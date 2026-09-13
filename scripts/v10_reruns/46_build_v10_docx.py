@@ -43,16 +43,16 @@ for line in lines:
     if s.startswith('## Tables'):
         H('Tables',1)
         three(doc,['Context','Per-cohort robust','Meta REML/Knha (BH)','Meta DL (BH)','Joint-model robust','xCell-resid (sensitivity)','External OS'],
-          [['LUAD','14','0','0','0','0','—'],
-           ['CRC','11','0','0','10','10','VEGF direction only (not stage-robust)'],
-           ['STAD','10','0','0','9','8','3/5 direction only (ACRG)'],
-           ['PAAD','10','0','0','0','0','none replicated (GSE21501)'],
-           ['HCC','0','0','0','0','0','—'],
-           ['ESCC','4','0','0','1','1','—'],
+          [['LUAD','14','2','12','0','0','—'],
+           ['CRC','11','8','12','10','10','VEGF direction only (not stage-robust)'],
+           ['STAD','10','0','9','9','8','3/5 direction only (ACRG)'],
+           ['PAAD','10','1','8','0','0','none replicated (GSE21501)'],
+           ['HCC','0','0','7','0','0','—'],
+           ['ESCC','4','0','7','1','1','—'],
            ['IBD','6','6','11','1','0','—'],
            ['COPD','0','1','5','0','0','—'],
            ['NAFLD','0','0','0','0','0','—'],
-           ['Asthma','0','0','4','0','0','—']])
+           ['Asthma','0','0','5','0','0','—']])
         skip=True; continue
     if skip:
         if s.startswith(('## ','# ')): skip=False

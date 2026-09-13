@@ -1,0 +1,3 @@
+[1] GSE44076 WNT_CTNNB1: yi=2.9711 vi=0.059086 ri=0.1465 dz=2.6087 hand(naive)=3.4225 n=98
+[2] shuffled order: yi=2.9711 vi=0.059086 ri=0.1465  | identical to [1]: TRUE
+[3] repeat run: yi=2.9711 vi=0.059086  | identical: TRUE

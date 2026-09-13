@@ -3,7 +3,7 @@
 **Growth-factor pathway architecture across human tissue contexts: a composition-aware transcriptional atlas spanning six cancers and four chronic diseases** (manuscript under review; npj Precision Oncology).
 
 Analysis and reproduction package accompanying the manuscript **v10**.
-> **Corrections (v10)**: three implementation errors found in an external audit (paired-effect indexing, joint-model inclusion filter, external-cohort tissue/stage handling) are fixed; see `ERRATA_v10.md`. Corrected headline numbers: per-cohort 55/170; unified-scale meta REML/Hartung-Knapp **7** (DL **20**); joint-model composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0); no module passed strict external replication (CRC VEGF/PDGF directionally consistent but not stage-robust).
+> **Corrections (v10)**: three implementation errors found in an external audit (paired-effect indexing, joint-model inclusion filter, external-cohort tissue/stage handling) are fixed; see `ERRATA_v10.md`. Corrected headline numbers: per-cohort 55/170; unified-scale meta REML/Hartung-Knapp **18** (DL **76**; 19 at fixed rho 0.5/0.7); joint-model composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0); no module passed strict external replication (CRC VEGF/PDGF directionally consistent but not stage-robust).
 
 
 ## Overview

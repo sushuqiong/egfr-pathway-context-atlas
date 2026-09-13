@@ -52,7 +52,8 @@ for (i in seq_len(nrow(cohorts))) {
     if (paired) {
       cc <- intersect(pidv[iscase], pidv[!iscase]); np <- length(cc)
       if (np>=4) {
-        yc <- y[match(cc, pidv[iscase])]; yr <- y[match(cc, pidv[!iscase])]
+        y_case <- y[iscase]; y_ctrl <- y[!iscase]
+        yc <- y_case[match(cc, pidv[iscase])]; yr <- y_ctrl[match(cc, pidv[!iscase])]
         ri <- suppressWarnings(cor(yc, yr)); ri <- if(is.finite(ri)) min(max(ri,-0.99),0.99) else 0.5
         es <- tryCatch(metafor::escalc(measure="SMCRH", m1i=mean(yc), m2i=mean(yr), sd1i=sd(yc), sd2i=sd(yr),
                                        ri=ri, ni=np), error=function(e) NULL)

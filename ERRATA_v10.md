@@ -21,3 +21,7 @@ Three implementation errors were found during an external computational audit an
 - Group reference level is now set explicitly (Control) in the model; the v9 post-hoc `-1` sign-flip script is deprecated.
 - Composition scores and expression matrices are joined by sample ID rather than by row order.
 - Adjusted and unadjusted effects are reported from the same model (identical residual SD) so that attenuation is not inferred from differently standardized estimates.
+
+
+## Second-pass correction (within v10)
+After the first v10 re-analysis, the verification suite (hand calculation vs metafor; sample-order shuffle; repeated run) revealed that the paired fix was still incomplete: `y[match(cc, case_ids)]` indexes the full vector with positions from the case subset, which is only correct when cases happen to occupy the leading rows. The implementation now subsets first and then matches values (`y_case <- y[case]; yc <- y_case[match(cc, id_case)]`). With the corrected indexing the median empirical within-pair correlation is **0.11** (not 0.99), and the final v10 numbers are: per-cohort 55/170; unified-scale meta **REML/Hartung-Knapp 18** (19 at fixed rho 0.5/0.7), **DL 76**; joint-model composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0); CRC external 556/187 with VEGF/PDGF directionally consistent but not stage-robust. Verification logs are in `tests/check_paired_effect_log.txt`.
