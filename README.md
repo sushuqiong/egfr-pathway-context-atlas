@@ -2,7 +2,9 @@
 
 **Growth-factor pathway architecture across human tissue contexts: a composition-aware transcriptional atlas spanning six cancers and four chronic diseases** (manuscript under review; npj Precision Oncology).
 
-Analysis and reproduction package accompanying the manuscript **v9**.
+Analysis and reproduction package accompanying the manuscript **v10**.
+> **Corrections (v10)**: three implementation errors found in an external audit (paired-effect indexing, joint-model inclusion filter, external-cohort tissue/stage handling) are fixed; see `ERRATA_v10.md`. Corrected headline numbers: per-cohort 55/170; unified-scale meta REML/Hartung-Knapp **7** (DL **20**); joint-model composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0); no module passed strict external replication (CRC VEGF/PDGF directionally consistent but not stage-robust).
+
 
 ## Overview
 We scored 17 growth-factor pathway modules in 27 public case-control cohorts across ten tissue contexts (LUAD, CRC, STAD, PAAD, HCC, ESCC; IBD, COPD, NAFLD, asthma) and adjudicated every candidate signal across:
@@ -42,3 +44,9 @@ Under review (internal v9). Latest manuscript, figures (PNG 300 dpi + PDF) and s
 
 ## License
 MIT (code). Result tables derive from public data (see accession registry for original citations).
+
+## Paths, configuration and reproducibility
+- `config/gene_sets_extended.csv` contains the 17 module definitions used throughout.
+- Scripts read GEO/cBioPortal processed objects via a `ROOTS` vector (three processed-data directories). Edit `ROOTS` at the top of each script to your local layout; the paths shipped are examples from the analysis machine.
+- v10 corrected pipeline: `scripts/v10_reruns/10_v10_effects_joint.R` (metafor SMD/SMCRH effects + joint composition models, sample-ID joins, explicit control reference) -> `20_v10_meta.R` (metafor REML/Knha + DL + fixed-rho sensitivity + joint summary with per-layer inclusion) -> `12_v10_crc_external.R` (tissue filter, numeric stage, unadjusted/age/age+stage with CI) -> `22_v10_matrix.R` (evidence matrix) -> `30_v10_figures.R` (all figures).
+- Verification checks: `tests/check_paired_effect.R` (hand calculation vs metafor SMCRH; sample-order shuffle with ID join; repeated-run stability). Run `Rscript tests/check_paired_effect.R` after adjusting `ROOTS`.
