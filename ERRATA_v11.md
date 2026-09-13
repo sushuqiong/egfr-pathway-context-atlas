@@ -22,7 +22,14 @@ Four issues raised in an external computational review of v10 were confirmed and
 - **Fix**: denominators come from the cBioPortal mutation-profiled sample lists (`<study>_sequenced`); driver-positive = a mutation record, driver-negative = profiled with no record (explicit wild type), and non-profiled samples are excluded and counted.
 - **Result**: mutation-profiled samples LUAD 559, CRC 534, STAD 431, PAAD 173, HCC 366, ESCC 185. PAAD KRAS 107/173 (**61.9%**), TP53 100/173 (57.8%), EGFR 1/173 (0.6%); the original TCGA PDAC study reported 140 KRAS-mutant tumours among 150 analysed cases, reflecting different subsets and mutation-calling pipelines. Driver screen: 102 tests, 5 nominal, **0** after BH-FDR (PAAD: 164 analysed, 98 mutant, 66 wild type, 13 non-profiled excluded).
 
-## Consistency and presentation fixes
+## 5. Figure and presentation QA (v11)
+An OCR-based layout audit (Tesseract word boxes at 300 dpi; script `tests/../scripts/v11_reruns/112_ocr_qa_v3.py`) found and fixed:
+- **Figure width exceeded the journal column width** (up to 43.9 cm), which would have shrunk printed type below 7 pt. All figures are now generated at **<= 17.0 cm / 300 dpi** and exported as TIFF with a spec table.
+- **Fig 6 rendered empty parentheses where the context name should appear** (`... malignant cell ()`): the plotting code referenced a non-existent column (`disease` instead of `context`) in the single-cell table, so the context was silently dropped. Fixed; labels now read e.g. `WNT/b-cat / malignant cell (CRC)`, verified by OCR.
+- Robustness markers previously drawn as star/diamond glyphs sitting between the axis text and the first tile were replaced by **black tile borders**, removing near-label glyph collisions; figure legends updated accordingly.
+- Supplementary Figure S2 was a stale earlier-version plot and has been **regenerated from the frozen v11 table**; its title no longer runs past the canvas.
+- Verified end state for all nine figures: **0 clipped text boxes, 0 text-box overlaps**; nominal font sizes >= 7.6 pt (axis text 9-12 pt, annotations 8-9.6 pt). The reusable protocol and the mandatory pre-submission checks are documented in `FIGURE_STYLE_GUIDE_v11.md`.
+
 - All numbers in the manuscript, Table 1, figure legends and figures are regenerated from the frozen v11 result tables; the previous mismatch (CRC 573/190 in Methods versus 556/187 in Results) is resolved to 556/187 with the audit trail.
 - Figure 1 is now drawn as **parallel evidence layers** (states can pass a later layer without passing an earlier one: STAD contributes nine composition-robust states and no meta-significant state).
 - Figure 6 separates paired same-cell-type comparisons from cell-identity contrasts; Figure 5 uses profiled-only denominators.
