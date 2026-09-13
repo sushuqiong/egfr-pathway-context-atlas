@@ -2,7 +2,9 @@
 
 **Growth-factor pathway architecture across human tissue contexts: a composition-aware transcriptional atlas spanning six cancers and four chronic diseases** (manuscript under review; npj Precision Oncology).
 
-Analysis and reproduction package accompanying the manuscript **v10**.
+Analysis and reproduction package accompanying the manuscript **v11**.
+> **Corrections (v11)**: effect sizes now use one common denominator (unpaired SMDH, matched SMCRPH); composition is reported as a base-versus-adjusted model comparison; single-cell tests are paired where complete patient pairs exist with cell-identity contrasts labelled separately; mutation prevalence and driver analyses use mutation-profiled samples only. See `ERRATA_v11.md`. Headline v11 numbers: per-cohort 55/170; meta REML/Knapp-Hartung **17** (DL **74**; non-shrinking KH **6**; unpaired-only **3**); composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0) with a median adjusted/base coefficient ratio of 0.87; no module passed pre-specified external replication.
+
 > **Corrections (v10)**: three implementation errors found in an external audit (paired-effect indexing, joint-model inclusion filter, external-cohort tissue/stage handling) are fixed; see `ERRATA_v10.md`. Corrected headline numbers: per-cohort 55/170; unified-scale meta REML/Hartung-Knapp **18** (DL **76**; 19 at fixed rho 0.5/0.7); joint-model composition-robust **21** (CRC 10, STAD 9, ESCC 1, IBD 1; PAAD 0); no module passed strict external replication (CRC VEGF/PDGF directionally consistent but not stage-robust).
 
 
@@ -50,3 +52,6 @@ MIT (code). Result tables derive from public data (see accession registry for or
 - Scripts read GEO/cBioPortal processed objects via a `ROOTS` vector (three processed-data directories). Edit `ROOTS` at the top of each script to your local layout; the paths shipped are examples from the analysis machine.
 - v10 corrected pipeline: `scripts/v10_reruns/10_v10_effects_joint.R` (metafor SMD/SMCRH effects + joint composition models, sample-ID joins, explicit control reference) -> `20_v10_meta.R` (metafor REML/Knha + DL + fixed-rho sensitivity + joint summary with per-layer inclusion) -> `12_v10_crc_external.R` (tissue filter, numeric stage, unadjusted/age/age+stage with CI) -> `22_v10_matrix.R` (evidence matrix) -> `30_v10_figures.R` (all figures).
 - Verification checks: `tests/check_paired_effect.R` (hand calculation vs metafor SMCRH; sample-order shuffle with ID join; repeated-run stability). Run `Rscript tests/check_paired_effect.R` after adjusting `ROOTS`.
+
+## Automated consistency check
+`python tests/check_v11_consistency.py` verifies that every headline number in the manuscript matches the frozen v11 result tables, that no superseded numbers reappear, and that citations are sequential and fully cited. `Rscript tests/check_paired_effect.R` verifies the paired-effect implementation (hand calculation vs metafor, sample-order shuffle with ID joins, repeated runs).

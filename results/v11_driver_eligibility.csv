@@ -1,0 +1,7 @@
+"context","driver","label","n_analysed","n_driver_positive","n_driver_negative_wildtype","n_excluded_not_profiled"
+"PAAD","KRAS_mut","KRAS mutation (profiled-only)",164,98,66,13
+"CRC","KRAS_mut","KRAS mutation (profiled-only)",508,212,296,58
+"LUAD","EGFR_mut","EGFR mutation (profiled-only)",492,69,423,11
+"STAD","TP53_mut","TP53 mutation (profiled-only)",376,172,204,9
+"HCC","TP53_mut","TP53 mutation (profiled-only)",355,107,248,5
+"ESCC","EGFR_amp","EGFR amplification (CNA-profiled-only)",94,14,80,0
