@@ -1,0 +1,4 @@
+﻿context,gene,n_cna_profiled,n_high_amp,pct_high_amp,n_gain_or_amp,pct_gain
+ESCC_squamous,EGFR,96,14,14.58,64,66.67
+ESCC_squamous,ERBB2,96,3,3.12,56,58.33
+ESCC_squamous,MET,96,3,3.12,51,53.12

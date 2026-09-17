@@ -1,0 +1,6 @@
+﻿context,cells_total,cells_used,donors,cell_types,arms,control_kinds
+CRC,47107,47107,29,9,non-tumour;tumour,adjacent;tumour
+IBD,46700,46700,18,5,case;control,healthy
+STAD,70090,68813,59,13,control;non-tumour;tumour,adjacent;healthy;tumour
+ASTHMA,20410,20410,8,1,case;control,case-vs-control
+LUAD,117266,0,0,0,,

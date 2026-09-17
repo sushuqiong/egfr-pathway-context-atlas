@@ -1,0 +1,5 @@
+﻿context,gene,n_mutated_samples,denominator_n,pct
+ESCC_squamous,KRAS,0,96,0.0
+ESCC_squamous,TP53,86,96,89.58
+ESCC_squamous,EGFR,2,96,2.08
+ESCC_squamous,ERBB2,0,96,0.0

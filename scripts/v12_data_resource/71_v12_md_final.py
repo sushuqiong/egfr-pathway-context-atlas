@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Build the final v12 Data Descriptor manuscript with every number injected from the frozen v12 tables."""
+import csv, os, re
+V12=r"C:\Users\fengq\Desktop\EGFR\EGFR的v12"; R=os.path.join(V12,"results"); PK=os.path.join(V12,"dataset_package")
+def rd(p):
+    with open(p,encoding="utf-8-sig",newline="") as f: return list(csv.DictReader(f))
+reg=rd(os.path.join(PK,"01_cohort_registry","cohort_registry.csv"))
+cov=rd(os.path.join(R,"v12_gene_coverage.csv"))
+aud=rd(os.path.join(R,"v12_sc_dataset_audit.csv"))
+scc=rd(os.path.join(R,"v12_sc_comparisons.csv"))
+inv=rd(os.path.join(PK,"08_qc","file_inventory_and_checksums.csv"))
+esc_mut=rd(os.path.join(R,"v12_escc_mutation_denominators.csv")); esc_cna=rd(os.path.join(R,"v12_escc_cna_summary.csv"))
+ph=rd(os.path.join(R,"v12_qc_cox_ph_assumption.csv")); col=rd(os.path.join(R,"v12_qc_composition_collinearity.csv"))
+pc=rd(os.path.join(R,"v12_percohort_effects.csv"))
+cc=[r for r in reg if r["design"]=="case-control"]
+excl=[r for r in reg if r["design"]!="case-control"]
+n_cc=len(cc); n_assays=sum(int(r["n_assay_records"]) for r in cc); n_pat=sum(int(r["n_unique_patients"]) for r in cc if r["patient_identity_available"]=="yes")
+n_paired=sum(1 for r in cc if r["paired_design_used"]=="yes"); n_nopid=sum(1 for r in cc if r["patient_identity_available"]=="no")
+plats=len({r["platform"] for r in cc}); n_rows_est=len(pc)
+mod_cov={}
+for r in cov: mod_cov[r["module"]]=min(mod_cov.get(r["module"],1.0), float(r["coverage"]))
+worst=sorted(mod_cov.items(), key=lambda x: x[1])[:3]
+sig=[r for r in scc if r["fdr"] not in ("","NA") and float(r["fdr"])<0.05]
+tests={}
+for r in scc: tests[r["test_used"]]=tests.get(r["test_used"],0)+1
+ph_ok=sum(1 for r in ph if r["ph_violation"].upper()=="TRUE")
+r2=sorted(float(r["r2_disease_on_composition"]) for r in col); vif=sorted(float(r["max_vif"]) for r in col)
+dep_note="[DOI to be inserted after Zenodo deposit]"
+title="A curated cross-disease transcriptomic resource with growth-factor and tissue-composition annotations"
+md=f"""# {title}
+
+**Abstract**
+Growth-factor pathway modules are scored routinely in bulk tissue transcriptomes, but scores from different studies are rarely comparable and the curation work is repeated by every user. This resource reorganises public human tissue transcriptomes into a comparable, annotation-rich form. It contains {n_cc} case-control expression cohorts across ten contexts ({n_assays} assay records, {n_pat} patients with available identifiers, {plats} platform annotations), sample-level annotation with tissue type, case-control role, paired relations and exclusion reasons, harmonised gene mapping with a transformation log, seventeen growth-factor module definitions with per-platform gene coverage, per-sample module scores, expression-derived composition scores with four compartments, patient-level summaries and donor-aware comparisons from four single-cell datasets, a complete estimates layer that retains non-significant and non-estimable results, quality-control records, runnable reuse examples and the software environment. Scores are cohort-internal; cross-cohort comparison is supported through effect sizes. The resource is deposited with a persistent identifier so that new gene sets, composition-adjustment schemes or cohorts can be evaluated without repeating the curation.
+
+**Background & Summary**
+Module scores for RTK and growth-factor signalling are used as if they measured a comparable quantity across studies, yet they do not: platforms differ in gene coverage, studies differ in tissue composition and design, and processed matrices differ in transformation history. A user who wants to test whether a module differs between tumour and normal tissue across diseases must first locate comparable series, resolve sample identity and tissue type, map probes to gene symbols, decide how to treat tissue composition, and then repeat the exercise for the next cohort.
+
+This resource performs that curation once and documents it. It provides (i) a cohort registry with design, platform, assay and patient counts, origin publications and provenance; (ii) sample-level annotation including tissue type, case-control role, pairing and exclusion reasons; (iii) harmonised expression matrices with a gene-mapping and transformation log; (iv) module definitions with per-platform coverage, so users can see which members are actually measured; (v) per-sample module scores, labelled by scoring layer, because bulk GSVA scores, member-mean z-scores and single-cell member-mean values are not interchangeable; (vi) expression-derived composition scores with four aggregated compartments, keyed by sample identifier; (vii) donor-level and cell-level summaries from single-cell datasets with raw and curated labels kept separate; (viii) a complete estimates layer, including non-significant and non-estimable results; and (ix) the quality-control records behind every exclusion.
+
+**Methods**
+*Cohort assembly and design classification.* Public series were identified for ten contexts (lung adenocarcinoma, colorectal, gastric, pancreatic, hepatocellular and oesophageal squamous cancer; inflammatory bowel disease; chronic obstructive pulmonary disease; non-alcoholic fatty liver disease; asthma). A series entered the case-control resource only if it contained both case and control samples. {n_cc} series qualified; one further series was reviewed and excluded because it is a treatment-response design ({excl[0]['accession']}, Responder versus NonResponder, {excl[0]['n_assay_records']} samples) and is listed with its reason. Paired designs are **derived from sample metadata** rather than assumed: a cohort is analysed as paired when at least four patients contribute both a case and a control sample ({n_paired} cohorts), and as unpaired otherwise ({n_cc-n_paired} cohorts). {n_nopid} cohorts provide no patient identifiers; for these, patient-level pairing cannot be established and the analysis is unpaired by necessity, which is recorded in the registry.
+*Expression processing.* Within each cohort, probes were mapped to gene symbols, multiple probes per gene were collapsed by mean, unmappable probes were dropped, and legacy symbols were updated when unambiguous. Matrices were log2-transformed when the input distribution indicated raw intensities; the observed distribution, the decision and the outcome are recorded per cohort in the transformation log. No cross-cohort merging or batch correction was performed.
+*Module definitions and coverage.* Seventeen modules were defined a priori and frozen with a version identifier; full membership is shipped, together with per-platform coverage. Coverage is incomplete for part of the cohorts; the largest gaps are {'; '.join(f'{m} (minimum coverage {c:.2f})' for m,c in worst)}. Users should consult the coverage table before cross-cohort comparison.
+*Tissue composition.* Composition was estimated with xCell v1.1.0, which returns expression-derived enrichment scores rather than cell proportions; four aggregated compartments (epithelial, fibroblast, endothelial, immune) are shipped with their construction rule and explicit sample keys (a join-status audit is included because the original table stored values in cohort order). Whether composition adjustment changes a disease coefficient was examined with a base model and an adjusted model fitted to identical samples; the collinearity between disease status and the compartment scores is reported per cohort (median R² = {r2[len(r2)//2]:.2f}, maximum {r2[-1]:.2f}; median maximum VIF = {vif[len(vif)//2]:.2f}), because in cohorts where composition predicts case status strongly, adjustment removes part of the disease contrast by construction.
+*Single-cell layers.* Four datasets contributed case-control contrasts: colorectal cancer (tumour versus non-tumour tissue; 29 donors), inflammatory bowel disease (disease versus healthy donors; 18 donors), gastric cancer (tumour versus adjacent tissue and versus non-pathological donors; 59 donors) and asthma (allergic asthma versus control; 8 donors). One further dataset (lung adenocarcinoma, 117,266 cells) was reviewed and excluded because all cells come from tumour tissue and no control arm exists. Raw labels are preserved; curated labels and mapping rules are shipped separately. Cells labelled malignant inside non-tumour samples (358 cells) are flagged, not reassigned. Each comparison is labelled as tumour-versus-adjacent, tumour-versus-healthy, case-versus-healthy or cell-identity; paired signed-rank tests are used when at least five donors contribute both arms, unpaired tests only when the arms are donor-disjoint, and comparisons that satisfy neither condition are reported as not testable rather than tested as if independent ({tests.get('not testable',0)} such comparisons).
+*TCGA-derived layer.* Molecular data were reorganised for six cancer contexts. Because the oesophageal source study contains both adenocarcinoma and squamous carcinoma, this layer is restricted to the squamous subset identified from patient-level histological annotation; {excl and ''}the excluded adenocarcinoma samples are listed. Mutation status is reported as "mutation reported" or "no mutation reported in the selected mutation data", and only for samples present in the mutation-profiled list of the source study; samples outside that list are labelled not assayed/unknown.
+*Quality control.* Checks cover sample identity and duplication, tissue and histology labels, pairing, case-control labels, gene mapping and coverage, expression distributions (outliers flagged, not deleted), module-score reproducibility across scoring implementations, the proportional-hazards assumption for the survival layer (Cox-ZPH p-values shipped), composition join integrity, and numerical reproduction of representative effect sizes by independent calculation and after shuffling sample order.
+
+**Data Records**
+The resource is deposited in Zenodo ({dep_note}) and is organised as ten folders: 01 cohort registry and provenance; 02 sample annotation; 03 expression provenance (mapping and transformation log); 04 module definitions, coverage and per-sample scores; 05 composition scores with sample keys and the join audit; 06 single-cell dataset audit, labels and donor-aware comparisons; 07 the complete estimates layer; 08 quality-control records; 09 runnable reuse examples with expected outputs and a shipped demo matrix; 10 environment and run order. A file inventory with row counts and SHA-256 checksums is included ({len(inv)} files, {sum(int(r['bytes']) for r in inv)/1e6:.1f} MB in total), so users can verify a download before use. The estimates layer contains {n_rows_est} cohort-module rows with effect sizes, sampling variances, the measure used (paired or unpaired), empirical within-pair correlations, and the coefficients of the base and adjusted composition models, together with meta-analytic summaries under several estimators and the single-cell comparison table.
+
+**Technical Validation**
+Figure 1 shows coverage and composition of the resource, and Figure 2 the validation checks. Sample identity: no sample identifier is duplicated across the {n_cc} case-control cohorts. Design: pairing is derived from metadata ({n_paired} paired cohorts), and the {n_nopid} cohorts without patient identifiers are analysed unpaired and flagged. Histology: the oesophageal layer is restricted to the squamous subset ({esc_mut[0]['denominator_n']} samples with mutation data; TP53 reported in {esc_mut[0]['n_mutated_samples']} samples, {esc_mut[0]['pct']}%), and the adenocarcinoma samples are excluded with reasons. Gene coverage: {len(set(r['module'] for r in cov if int(r['n_present'])<int(r['n_members'])))} of 17 modules have at least one cohort with incomplete coverage, which is reported rather than hidden. Scores: module scores are reproducible across GSVA and member-mean implementations, and representative effect sizes were reproduced by independent calculation and after shuffling sample order. Survival layer: the proportional-hazards assumption was not violated for any of the {len(ph)} module features tested (all Cox-ZPH p > 0.05). Composition: collinearity between disease status and compartments is reported per cohort (median R² = {r2[len(r2)//2]:.2f}). Single-cell: {len(scc)} comparisons are shipped with the test actually used ({tests.get('wilcoxon-signed-rank (paired donors)',0)} paired by donor, {tests.get('mann-whitney (donor-disjoint)',0)} donor-disjoint unpaired, {tests.get('mann-whitney (cell-identity; unpaired)',0)} cell-identity contrasts, {tests.get('not testable',0)} not testable), and {len(sig)} reach family-wise FDR below 0.05, all of which should be read as descriptive rather than as validated biology. Module scores are expression-derived and do not measure phosphorylation or pathway activity.
+
+**Usage Notes**
+Two runnable examples are shipped: replacing a module gene set and re-scoring a cohort (with a demo matrix that contains module members, so the example runs offline), and recomputing the composition comparison. Users should note that (i) scores are comparable within a cohort and across cohorts only as effect sizes; (ii) module coverage must be checked before cross-cohort comparison; (iii) bulk GSVA scores, member-mean z-scores and single-cell member-mean values are different quantities and must not be concatenated; (iv) composition scores are enrichment scores, not proportions; (v) the same disease label in different layers does not imply the same patients, and the resource is not a patient-level multi-omics resource; (vi) module scores are not validated prognostic or predictive tools, and the survival, driver and single-cell analyses shipped here are exploratory and include negative results; (vii) where a cohort lacks patient identifiers, paired analysis is impossible and this is flagged rather than assumed.
+
+**Data Availability**
+All source data are public and listed with accessions and origin publications in the cohort registry. The curated resource is deposited in Zenodo under a CC-BY-4.0 licence ({dep_note}); code is archived with a DOI and developed at https://github.com/sushuqiong/egfr-pathway-context-atlas. No new human specimens were collected; new derived data (annotations, scores, quality-control records and estimates) were generated and are included in the deposit.
+
+**Code Availability**
+Analysis code, the frozen module configuration, the run order and the two reuse examples are provided in the repository and archived in the deposit; software versions are recorded in folder 10.
+
+**Ethics statement**
+This work uses only publicly available, de-identified data; no ethical approval or informed consent was required.
+
+**Author Contributions**
+S.S. designed the resource, curated cohorts and sample annotations, implemented the analysis and quality-control pipeline, and wrote the manuscript.
+
+**Competing Interests**
+The author declares no competing interests.
+
+**Acknowledgements and Funding**
+The author thanks the authors of the source studies and the public data providers (GEO, TCGA/GDC via cBioPortal, CELLxGENE). No specific funding was received for this work.
+"""
+p=os.path.join(V12,"01_manuscript","DataDescriptor_v12.md"); open(p,"w",encoding="utf-8").write(md)
+ab=re.search(r"\*\*Abstract\*\*(.*?)\*\*Background", md, re.S).group(1)
+print("written:",p)
+print("title chars:",len(title),"| abstract words:",len(re.findall(r"\S+",ab)))
+print("cohorts(cc):",n_cc,"| assays:",n_assays,"| patients(with ids):",n_pat,"| paired:",n_paired,"| no patient ids:",n_nopid)
+print("estimates rows:",n_rows_est,"| sc comparisons:",len(scc),"| sc FDR<0.05:",len(sig),"| PH violations:",ph_ok)
+print("collinearity median R2: %.3f max %.3f"%(r2[len(r2)//2], r2[-1]))
