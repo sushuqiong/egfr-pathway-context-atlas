@@ -1,0 +1,4 @@
+"context","pairs","spearman","max_abs_diff"
+"LUAD",8772,0.9789,2.5911
+"CRC",10064,0.9535,3.771
+"ESCC",1615,0.9726,2.8623
