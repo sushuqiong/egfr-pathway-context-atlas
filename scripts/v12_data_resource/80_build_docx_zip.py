@@ -39,6 +39,8 @@ for f,dst in [("01_manuscript/DataDescriptor_v12.docx","01_Manuscript/DataDescri
               ("02_figures/Fig2_technical_validation.png","02_Figures/Fig2_technical_validation.png"),
               ("02_figures/Fig1_resource_overview.pdf","02_Figures/Fig1_resource_overview.pdf"),
               ("02_figures/Fig2_technical_validation.pdf","02_Figures/Fig2_technical_validation.pdf"),
+              ("03_tables/Tables_v12.docx","03_Tables/Tables_v12.docx"),
+              ("03_tables/Figure_legends_v12.docx","03_Tables/Figure_legends_v12.docx"),
               ("03_Zenodo上传指南.md","00_先看这个_Zenodo上传指南.md"),
               ("00_状态与待决问题.md","00_先看这个_状态与待决问题.md")]:
     s=os.path.join(V12,f)
