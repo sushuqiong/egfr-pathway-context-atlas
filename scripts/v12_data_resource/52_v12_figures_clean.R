@@ -37,7 +37,7 @@ pB <- ggplot(long, aes(factor(context, levels=ord), n)) + geom_col(fill="#3C6E9F
 aud <- read.csv(file.path(R,"v12_sc_dataset_audit.csv"), stringsAsFactors=FALSE)
 aud$arm_lab <- ifelse(aud$arms=="excluded", "excluded: no control arm", paste0(aud$arms, "|", aud$donors, " donors"))
 pC <- ggplot(aud, aes(factor(context, levels=rev(c("CRC","IBD","STAD","ASTHMA","LUAD"))), cells_used)) +
-  geom_col(fill="#7FA8C9", width=.7) + geom_text(aes(label=arm_lab), hjust=-0.05, size=2.8, colour="grey25") +
+  geom_col(fill="#7FA8C9", width=.7) + geom_text(aes(label=arm_lab), hjust=-0.05, size=3.1, colour="grey25") +
   coord_flip() + scale_y_continuous(expand=expansion(mult=c(0,.45))) +
   labs(x=NULL, y="single cells used", title="C  Single-cell datasets (arms in each)") + th()
 fig1 <- pA / pB / pC
@@ -53,13 +53,13 @@ exc <- data.frame(label=c("Adenocarcinoma samples excluded (squamous oesophageal
                   n=c(89,1277,117266,358,80),
                   kind=c("excluded","excluded","excluded","flagged","not testable"))
 pA <- ggplot(exc, aes(factor(label, levels=rev(label)), n)) + geom_col(fill="#A6123C", width=.62) +
-  geom_text(aes(label=format(n, big.mark=",")), hjust=-0.08, size=2.9, colour="grey25") + coord_flip() +
+  geom_text(aes(label=format(n, big.mark=",")), hjust=-0.08, size=3.1, colour="grey25") + coord_flip() +
   scale_y_log10(expand=expansion(mult=c(0,.35))) +
   labs(x=NULL, y="records (log scale)", title="A  Exclusions, flags, not testable") + th() +
   theme(axis.text.y=element_text(size=7.5))
 tt <- as.data.frame(table(scc$test_used)); names(tt) <- c("test","n")
 pB <- ggplot(tt, aes(n, reorder(test, n))) + geom_col(fill="#14457B", width=.62) +
-  geom_text(aes(label=n), hjust=-0.15, size=2.9, colour="grey25") + scale_x_continuous(expand=expansion(mult=c(0,.2))) +
+  geom_text(aes(label=n), hjust=-0.15, size=3.1, colour="grey25") + scale_x_continuous(expand=expansion(mult=c(0,.2))) +
   labs(x="number of comparisons", y=NULL, title="B  Single-cell comparison design") + th() +
   theme(axis.text.y=element_text(size=7.5))
 pc <- read.csv(file.path(R,"v12_percohort_effects.csv"), stringsAsFactors=FALSE)
@@ -75,7 +75,7 @@ cg$status <- ifelse(grepl("insufficient", cg$flag, ignore.case=TRUE), "grey",
 cg$v <- ifelse(is.na(cg$spearman), 0, cg$spearman); cg$lab <- ifelse(is.na(cg$spearman), "n.a.", sprintf("%.2f", cg$spearman))
 pD <- ggplot(cg, aes(v, reorder(module, v), fill=status)) + geom_col(width=.62) +
   scale_fill_manual(values=c(blue="#14457B", red="#A6123C", grey="grey65")) +
-  geom_text(aes(label=lab), hjust=-0.12, size=2.7, colour="grey25") +
+  geom_text(aes(label=lab), hjust=-0.12, size=3.1, colour="grey25") +
   geom_vline(xintercept=median(cg$spearman, na.rm=TRUE), linetype="dashed", colour="grey45") +
   scale_x_continuous(limits=c(0,1.15)) +
   labs(x="Spearman rho (full vs common-gene scoring)", y=NULL,

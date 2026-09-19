@@ -17,7 +17,7 @@ pA <- ggplot(A, aes(reorder(label, concordance), concordance)) + geom_col(width=
   geom_vline(xintercept=1, linetype="dashed", colour="grey45") + facet_wrap(~disease, scales="free_y", ncol=3) +
   labs(x="fraction of cohorts with the majority effect direction", y=NULL,
        title="A  Cross-cohort direction consistency") + th(9.5) +
-  theme(axis.text.y=element_text(size=5.6), strip.text=element_text(size=8))
+  theme(axis.text.y=element_text(size=6.4), strip.text=element_text(size=8))
 ## B: coverage-threshold sensitivity
 sen <- read.csv(file.path(R,"v13_qc_coverage_threshold_sensitivity.csv"), stringsAsFactors=FALSE)
 sen$scenario <- factor(sen$scenario, levels=c("all cohorts","coverage >= 0.60","coverage >= 0.80","coverage >= 0.90"))
