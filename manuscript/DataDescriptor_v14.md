@@ -1,11 +1,11 @@
 # Coverage-aware harmonized cross-disease transcriptome resource with expression-derived compartment scores
 
 **Author information**
-Shuqiong Su^1,*  (ORCID: to be supplied by the author)
+Shuqiong Su^1, Aiqun Liu^1,*
 
 ^1 Department of Gastroenterology, Guangxi Medical University Cancer Hospital, Nanning, China
 
-*Correspondence: liuaiqun_2004@163.com  (confirm the corresponding author and add ORCID iDs before submission)
+*Correspondence: Aiqun Liu (liuaiqun_2004@163.com). ORCID iDs to be supplied by the authors at submission.
 
 **Keywords**
 harmonized transcriptome resource; signaling module scores; tissue-compartment scores; cross-disease comparability; gene coverage; single-cell reference; data descriptor
@@ -46,7 +46,7 @@ Which layer to use (Supplementary Table S8): bulk GSVA⟦51⟧7 z-scores within 
 All source data are public. The 26 case-control bulk cohorts are the GEO series GSE32863, GSE19804, GSE10072, GSE44076, GSE41258, GSE23878, GSE75214, GSE87473, GSE179285, GSE4302, GSE43696, GSE67472, GSE27342, GSE63089, GSE13911, GSE15471, GSE28735, GSE62452, GSE57957, GSE62232, GSE23400, GSE20347, GSE76925, GSE47460, GSE33814, GSE66676; the treatment-response series GSE16879 and the external-validation series GSE39582 were retrieved but are not part of the case-control resource. The single-cell inputs are the CZ CELLxGENE Discover collections 1cbfb478-2c7f-4d15-b522-9f74e9fe52a8 (colorectal cancer), 7c7bd6c2-925b-4034-baab-620ef1b760e1 (inflammatory bowel disease) and f11cb29c-b546-4738-9bd8-66ea621a7bd5 (gastric cancer) together with GEO series GSE193816 (asthma). The tumour molecular layers come from the NCI Genomic Data Commons projects TCGA-LUAD, TCGA-COADREAD, TCGA-STAD, TCGA-PAAD, TCGA-LIHC and TCGA-ESCA, accessed through cBioPortal. Every accession is cited together with its origin publication in the reference list, and the per-file registry is 01_cohort_registry/cohort_registry.csv. The curated resource, including the analysis code, is deposited in Zenodo under a CC-BY-4.0 licence: https://doi.org/[DOI to be inserted after deposit]. No new human specimens were collected and no controlled-access data were used. Upstream data remain under their own terms (GEO series terms, TCGA/GDC open-access terms and CELLxGENE dataset terms).
 
 **Code Availability**
-The analysis code is in the repository https://github.com/sushuqiong/cross-disease-transcriptomic-resource (tag v14.0 of this manuscript) and is archived inside the deposit as 11_code/, with README_code.md describing each script, 10_environment/run_order.md giving the execution order, and environment.txt recording the software versions (R 4.4.1 with GSVA, metafor, survival, limma, GEOquery, xCell, ggplot2, patchwork; Python 3.11 with numpy, h5py, scipy, python-docx and Pillow). Paths inside the scripts point to the author's working directories and must be adjusted to the deposit layout; all inputs they require are shipped in the deposit except the raw source matrices, which are downloaded from the accessions above.
+The analysis code is in the repository https://github.com/sushuqiong/cross-disease-transcriptomic-resource (tag v14.0 of this manuscript) and is archived inside the deposit as 11_code/, with README_code.md describing each script, 10_environment/run_order.md giving the execution order, and environment.txt recording the software versions (R 4.4.1 with GSVA, metafor, survival, limma, GEOquery, xCell, ggplot2, patchwork; Python 3.11 with numpy, h5py, scipy, python-docx and Pillow). Paths inside the scripts point to the authors' working directories and must be adjusted to the deposit layout; all inputs they require are shipped in the deposit except the raw source matrices, which are downloaded from the accessions above.
 
 **References**
 1. Barrett, T. et al. NCBI GEO: archive for functional genomics data sets—update. *Nucleic Acids Res.* **41**, D991-D995 (2012). https://doi.org/10.1093/nar/gks1193.
@@ -103,13 +103,13 @@ The analysis code is in the repository https://github.com/sushuqiong/cross-disea
 52. R Core Team. R: a language and environment for statistical computing, version 4.4.1. *R Foundation for Statistical Computing* https://www.R-project.org (2024).
 
 **Author Contributions**
-S.S. designed the resource, curated cohorts and annotations, implemented the analysis, validation and quality-control pipeline, and wrote the manuscript.
+S.S. (first author) designed the resource, curated the cohorts and their annotation, implemented the analysis, validation and quality-control pipeline and wrote the manuscript. A.L. (corresponding author) supervised the work and critically revised the manuscript. Both authors read and approved the final manuscript.
 
 **Competing Interests**
-The author declares no competing interests.
+The authors declare no competing interests.
 
 **Acknowledgements**
-The author thanks the authors of the source studies and the public data providers (GEO, TCGA/GDC via cBioPortal, CELLxGENE). **Funding**
+The authors thank the authors of the source studies and the public data providers (GEO, TCGA/GDC via cBioPortal, CELLxGENE). **Funding**
 No specific funding was received for this work.
 
 **Figure captions**
