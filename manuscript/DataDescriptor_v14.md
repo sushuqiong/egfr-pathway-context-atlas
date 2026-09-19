@@ -1,11 +1,11 @@
 # Coverage-aware harmonized cross-disease transcriptome resource with expression-derived compartment scores
 
 **Author information**
-Shuqiong Su^1, Aiqun Liu^1,*
+Shuqiong Su^1 (ORCID: 0009-0009-9217-6233), Aiqun Liu^1,* (ORCID: 0000-0002-1077-5585)
 
 ^1 Department of Gastroenterology, Guangxi Medical University Cancer Hospital, Nanning, China
 
-*Correspondence: Aiqun Liu (liuaiqun_2004@163.com). ORCID iDs to be supplied by the authors at submission.
+*Correspondence: Aiqun Liu (liuaiqun_2004@163.com).
 
 **Keywords**
 harmonized transcriptome resource; signaling module scores; tissue-compartment scores; cross-disease comparability; gene coverage; single-cell reference; data descriptor
