@@ -19,7 +19,7 @@ findings.append(("package ships a runnable download-to-results pathway", len(has
 from docx import Document as _D
 _leg=" ".join(p.text for p in _D(os.path.join(V13,"03_tables","Figure_legends_v13.docx")).paragraphs)
 figs=[f for f in os.listdir(os.path.join(V13,"02_figures")) if f.endswith(".png")]
-cited=[f"Figure {i}" for i in (1,2,3)]
+cited=[f"Figure {i}" for i in (1,2,3,4)]
 _ok=all(c in _leg for c in cited) and not ("Supplementary Figure S1" in _leg)
 findings.append(("legend file matches the shipped main figures and claims no missing supplementary figures", _ok,
                  f"cited={[c for c in cited if c in _leg]} | shipped={sorted(figs)}"))

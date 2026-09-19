@@ -87,8 +87,8 @@ for f in ["Tables_v13.docx","Figure_legends_v13.docx"]:
 for tok in ["TODO","TBD","XXX","YOUR_MATRIX","待定"]:
     chk(tok.lower() not in md.lower(), f"no placeholder {tok}", f"placeholder {tok}")
 figs=[f for f in os.listdir(os.path.join(V13,"02_figures")) if f.endswith(".png")]
-chk(len(figs)==3, f"three main figures ({len(figs)})", f"expected 3 figures, found {len(figs)}")
-for i in (1,2,3): chk(f"Figure {i}" in md, f"Figure {i} cited")
+chk(len(figs)==4, f"four main figures ({len(figs)})", f"expected 4 figures, found {len(figs)}")
+for i in (1,2,3,4): chk(f"Figure {i}" in md, f"Figure {i} cited")
 inv=rd(os.path.join(PK,"08_qc","file_inventory_and_checksums.csv"))
 chk(len(inv)>=60, f"inventory covers {len(inv)} files", "inventory too small")
 print("\n=== v13 AUDIT ===")
