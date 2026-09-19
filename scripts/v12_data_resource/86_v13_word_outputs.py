@@ -57,18 +57,21 @@ doc=Document(); st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font
 head(doc,"Table 1. Cohort composition of the resource by disease context")
 three_line(doc,["Context","Cohorts","Assay records","Patients (with identifiers)","Paired patients","Platforms","Cohorts without patient identifiers"],
            [[c,agg[c]["cohorts"],agg[c]["assays"],agg[c]["pats"],agg[c]["paired"],len(agg[c]["plats"]),agg[c]["nopid"]] for c in order if c in agg])
-doc.add_paragraph("Case-control series only (26 cohorts). One treatment-response series (GSE16879, 43 samples) was reviewed and excluded (Supplementary Table S9).")
+doc.add_paragraph("Case-control series only (26 cohorts; 2,711 assay records; 1,086 patients with identifiers; 9 cohorts provide no patient identifiers and are analysed unpaired). One treatment-response series (GSE16879, 43 samples) was reviewed and excluded: see Supplementary Table S4 for every exclusion and flag.")
 head(doc,"Supplementary Table S1. Cohort registry with design, counts, origin publications and provenance")
 s1=[[r["accession"],CTX.get(r["accession"],""),r["platform"],r["n_assay_records"],r["n_unique_patients"],r["n_case"],r["n_control"],
      r["patients_with_both_arms"],r["paired_design_used"],r["patient_identity_available"],r["design"],r["origin_pmid"]] for r in
      sorted(reg,key=lambda x:(order.index(CTX.get(x["accession"],"IBD")) if CTX.get(x["accession"],"IBD") in order else 99,x["accession"]))]
 three_line(doc,["Accession","Context","Platform","Assays","Patients","Cases","Controls","Patients with both arms","Paired used","Patient IDs","Design","Origin PMID"],s1,7.5)
-cov=rd(os.path.join(PK,"04_modules","platform_module_coverage.csv")); mods={}
+cov=rd(os.path.join(PK,"04_modules","platform_module_coverage.csv"))
+_cc={r["accession"] for r in cc}
+cov=[r for r in cov if r["accession"] in _cc]           # case-control cohorts only (26), not the excluded series
+mods={}
 for r in cov:
     m=r["module"]; c=float(r["coverage"]); d=mods.setdefault(m,dict(members=r["n_members"],minc=1.0,n_inc=0))
     d["minc"]=min(d["minc"],c); d["n_inc"]+=1 if int(r["n_present"])<int(r["n_members"]) else 0
 head(doc,"Supplementary Table S2. Module membership and cross-cohort gene coverage")
-three_line(doc,["Module","Members","Minimum coverage","Cohorts with incomplete coverage"],[ [m,v["members"],f"{v['minc']:.2f}",v["n_inc"]] for m,v in sorted(mods.items(),key=lambda kv:kv[1]["minc"])])
+three_line(doc,["Module","Members","Minimum coverage","Case-control cohorts with incomplete coverage (of 26)"],[ [m,v["members"],f"{v['minc']:.2f}",v["n_inc"]] for m,v in sorted(mods.items(),key=lambda kv:kv[1]["minc"])])
 sc_aud=rd(os.path.join(R,"v12_sc_dataset_audit.csv"))
 head(doc,"Supplementary Table S3. Single-cell datasets, cells and comparison arms")
 three_line(doc,["Dataset","Cells total","Cells used","Donors","Cell types","Arms","Notes"],
@@ -81,7 +84,7 @@ three_line(doc,["Rule","Definition / threshold"],[
  ["Paired design","metadata-derived: at least four patients contributing both a case and a control sample"],
  ["Meta-analysis","REML with Hartung-Knapp; DerSimonian-Laird, ad hoc Knapp-Hartung, unpaired-only and fixed rho (0.5, 0.7) as sensitivity"],
  ["Composition adjustment","base model is primary; adjusted model adds the four compartment scores on identical samples and is reported as a sensitivity analysis"],
- ["Common-gene sensitivity","re-score with members present in every cohort; flag when the direction disagrees in >=20% of cohorts; not scorable when <3 members are shared"],
+ ["Common-gene sensitivity","re-score with the members present in every cohort; flag when the effect direction disagrees with full-member scoring in >=20% of cohorts; not scorable when fewer than two members are shared; exactly two shared members is reported as low-information"],
  ["Proportional hazards","scaled Schoenfeld residuals (cox.zph) in the age-adjusted model; flagged at p<0.05 (0 of 17 features flagged)"],
  ["Single-cell design","donor-level means; >=3 donors per arm; paired signed-rank when >=5 complete pairs; unpaired only when arms are donor-disjoint; otherwise not testable"],
  ["Multiplicity","Benjamini-Hochberg within context x module x comparison-type families (single-cell) and within context families (meta-analysis)"],
@@ -91,9 +94,10 @@ head(doc,"Supplementary Table S6. Cohort-by-module pairs that are not estimable"
 three_line(doc,["Accession","Module","Reason"],[[r["accession"],r["module"],r["reason"]] for r in rd(os.path.join(PK,"07_estimates","not_estimable_pairs.csv"))],8)
 head(doc,"Supplementary Table S7. Validation evidence: what was reproduced exactly and what only in rank")
 three_line(doc,["Check","Scope","Result","Interpretation"],[
- ["Bulk module scores and cohort effects","3 cohorts (GSE13911, GSE44076, GSE47460); 49 effects","Spearman 1.00 per module; maximum absolute difference in effect and standard error = 0","exact reproduction"],
- ["Cox models refitted from shipped scores","LUAD, CRC, squamous oesophageal; 68 comparisons","maximum absolute difference in hazard ratio = 0","exact reproduction"],
- ["TCGA patient-level scores rebuilt from gene-level table","3 contexts; 29,451 patient-module pairs","Spearman 0.95-0.98","rank agreement only; residual differences trace to the aggregation order"],
+ ["Bulk module scores","3 cohorts (GSE13911, GSE44076, GSE47460); per-sample scores","Spearman 1.00 for every module (per-sample score table in 08_qc)","exact reproduction"],
+ ["Bulk cohort effects and standard errors","3 cohorts; 49 effects","maximum absolute difference in effect and standard error = 0","exact reproduction"],
+ ["Cox models refitted from shipped scores","LUAD and CRC univariable, squamous oesophageal univariable and age-plus-stage; 68 comparisons","maximum absolute difference in hazard ratio = 0","exact reproduction"],
+ ["TCGA patient-level scores rebuilt from gene-level table","3 contexts; 20,451 patient-module pairs","Spearman 0.95-0.98","rank agreement only; residual differences trace to the aggregation order"],
  ["xCell compartment scores recomputed","3 cohorts x 4 compartments","Pearson 0.71-0.95; Spearman 0.48-0.94","substantial agreement; lowest rank agreement for one fibroblast score"],
  ["Cross-cohort direction","165 context-module pairs with >=2 cohorts","112 pairs (68%) share the same sign in every cohort","comparability is partial and quantified"],
  ["Coverage-threshold sensitivity","all / >=0.60 / >=0.80 / >=0.90 coverage","BH-significant states: 13 / 13 / 12 / 6","gradual degradation, not all-or-nothing"]],8)
@@ -109,7 +113,7 @@ three_line(doc,["Check","Result"],[
  ["Coverage-threshold sensitivity","BH-significant states 13 (all, k=165) / 13 (>=0.60) / 12 (>=0.80, k=147) / 6 (>=0.90, k=130)"],
  ["Module versus xCell signature overlap","all 17 modules share more than 20% of their members with the xCell panel; maximum 100%"],
  ["Collinearity: overall model","R2 of disease status on the four compartment scores: median 0.33, maximum 0.89"],
- ["Collinearity: per-predictor VIF","median 2.09, maximum 4.53 (explains why a high overall R2 coexists with modest VIF)"],
+ ["Collinearity: per-predictor VIF","median 2.09, maximum 4.53; the overall model R-squared (how well the four scores jointly explain disease status) is a different quantity from the per-predictor VIF (how far the scores duplicate one another)"],
  ["Curation flow","27 series with processed matrices; 26 case-control cohorts; 1 treatment-response series excluded; 5 single-cell datasets reviewed (4 used)"]],8)
 tp=os.path.join(OUT,"Tables_v13.docx"); doc.save(tp); print("tables:",tp)
 L=Document(); st2=L.styles['Normal']; st2.font.name='Times New Roman'; st2.font.size=Pt(11)

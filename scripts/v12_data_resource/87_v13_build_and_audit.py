@@ -20,9 +20,9 @@ for line in md.splitlines():
     elif s.startswith("**") and s.endswith("**"): H(s.strip("*"),2)
     else: doc.add_paragraph(s.replace("**","").replace("*",""))
 doc.add_page_break(); H("Figures",1)
-caps=[("Figure 1. Resource overview: module gene coverage per context (A); assay records, unique patients and paired patients (B); single-cell datasets and arms (C).","Fig1_resource_overview.png"),
-      ("Figure 2. Technical validation: documented exclusions and not-testable comparisons (A); single-cell comparison design (B); the complete estimates layer (C); common-gene sensitivity (D); disease status versus composition (E).","Fig2_technical_validation.png"),
-      ("Figure 3. Comparability and coupling checks: cross-cohort direction consistency (A); coverage-threshold sensitivity (B); module-versus-xCell signature overlap (C); model R2 versus per-predictor VIF (D).","Fig3_comparability_checks.png")]
+caps=[("Figure 1 (caption in the text above and in the separate legend file).","Fig1_resource_overview.png"),
+      ("Figure 2 (caption in the text above and in the separate legend file).","Fig2_technical_validation.png"),
+      ("Figure 3 (caption in the text above and in the separate legend file).","Fig3_comparability_checks.png")]
 for cap,fn in caps:
     H(cap,2); p=os.path.join(V13,"02_figures",fn)
     if os.path.exists(p): doc.add_picture(p,width=Inches(6.2))

@@ -41,8 +41,8 @@ pC <- ggplot(aud, aes(factor(context, levels=rev(c("CRC","IBD","STAD","ASTHMA","
   coord_flip() + scale_y_continuous(expand=expansion(mult=c(0,.45))) +
   labs(x=NULL, y="single cells used", title="C  Single-cell datasets (arms in each)") + th()
 fig1 <- pA / pB / pC
-ggsave(file.path(F,"Fig1_resource_overview.png"), fig1, width=W, height=9.6, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=9.6)
+ggsave(file.path(F,"Fig1_resource_overview.png"), fig1, width=W, height=8.9, dpi=300, limitsize=FALSE)
+ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=8.9)
 ## ---------- Figure 2 ----------
 scc <- read.csv(file.path(R,"v12_sc_comparisons.csv"), stringsAsFactors=FALSE)
 exc <- data.frame(label=c("Adenocarcinoma samples excluded (squamous oesophageal layer)",
@@ -87,6 +87,6 @@ pE <- ggplot(col, aes(r2_disease_on_composition)) + geom_histogram(bins=12, fill
   labs(x="R2 (disease ~ composition)", y="cohorts",
        title="E  Disease status vs composition") + th(9.5)
 fig2 <- pA / pB / pC / pD / pE
-ggsave(file.path(F,"Fig2_technical_validation.png"), fig2, width=W, height=12.2, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig2_technical_validation.pdf"), fig2, width=W, height=12.2)
+ggsave(file.path(F,"Fig2_technical_validation.png"), fig2, width=W, height=8.8, dpi=300, limitsize=FALSE)
+ggsave(file.path(F,"Fig2_technical_validation.pdf"), fig2, width=W, height=8.8)
 cat("clean figures written (no overall titles, no top/bottom legends)\n")
