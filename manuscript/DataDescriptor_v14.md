@@ -75,7 +75,7 @@ Analysis code, the frozen module configuration, the run order, the version file 
 34. The Cancer Genome Atlas Research Network Comprehensive and Integrative Genomic Characterization of Hepatocellular Carcinoma. Cell 2017;169:1327-1341.e23. doi:10.1016/j.cell.2017.05.046
 35. Li K et al. Integrated genomic characterization of oesophageal carcinoma. Nature 2017;541:169-175. doi:10.1038/nature20805
 36. Grossman R. Toward a Shared Vision for Cancer Genomic Data. New England Journal of Medicine 2016;375:1109-1112. doi:10.1056/nejmp1607591
-37. Unknown author Correction: The cBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data. Cancer Discovery 2012;2:960-960. doi:10.1158/2159-8290.cd-12-0326
+37. Cerami E The cBio cancer genomics portal: an open platform for exploring multidimensional cancer genomics data. Cancer Discov 2012;2:401-4. doi:10.1158/2159-8290.CD-12-0095
 38. Gao J. Integrative Analysis of Complex Cancer Genomics and Clinical Profiles Using the cBioPortal. Science Signaling 2013;6. doi:10.1126/scisignal.2004088
 39. CZI Cell Science Program CZ CELLxGENE Discover: a single-cell data platform for scalable exploration, analysis and modeling of aggregated data. Nucleic Acids Res 2025;53:D886-D900. doi:10.1093/nar/gkae1142
 40. Himes BE, et al. RNA-seq transcriptome profiling of airway epithelial cells from subjects with asthma. Gene Expression Omnibus, accession GSE193816; 2022.
