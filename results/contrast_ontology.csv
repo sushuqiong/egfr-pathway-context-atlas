@@ -1,0 +1,27 @@
+accession,context,control_description,control_class
+GSE32863,LUAD,adjacent non-tumour lung tissue,tumour-adjacent normal tissue
+GSE19804,LUAD,adjacent non-tumour lung tissue,tumour-adjacent normal tissue
+GSE10072,LUAD,adjacent non-tumour lung tissue,tumour-adjacent normal tissue
+GSE44076,CRC,adjacent non-tumour colon tissue,tumour-adjacent normal tissue
+GSE41258,CRC,adjacent non-tumour colon tissue,tumour-adjacent normal tissue
+GSE23878,CRC,adjacent non-tumour colon tissue,tumour-adjacent normal tissue
+GSE27342,STAD,adjacent non-tumour gastric tissue,tumour-adjacent normal tissue
+GSE63089,STAD,adjacent non-tumour gastric tissue,tumour-adjacent normal tissue
+GSE13911,STAD,adjacent non-tumour gastric tissue,tumour-adjacent normal tissue
+GSE15471,PAAD,adjacent non-tumour pancreatic tissue,tumour-adjacent normal tissue
+GSE28735,PAAD,adjacent non-tumour pancreatic tissue,tumour-adjacent normal tissue
+GSE62452,PAAD,adjacent non-tumour pancreatic tissue,tumour-adjacent normal tissue
+GSE57957,HCC,adjacent non-tumour liver tissue,tumour-adjacent normal tissue
+GSE62232,HCC,adjacent non-tumour liver tissue,tumour-adjacent normal tissue
+GSE23400,ESCC,adjacent non-tumour oesophageal tissue,tumour-adjacent normal tissue
+GSE20347,ESCC,adjacent non-tumour oesophageal tissue,tumour-adjacent normal tissue
+GSE75214,IBD,non-inflamed (quiescent) intestinal mucosa of the same patients,non-inflamed tissue of the same or comparable patients
+GSE87473,IBD,non-inflamed intestinal mucosa,non-inflamed tissue of the same or comparable patients
+GSE179285,IBD,healthy donor intestinal tissue,healthy donor / non-diseased control
+GSE4302,Asthma,healthy control airway epithelium,other
+GSE43696,Asthma,healthy control airway epithelium,other
+GSE67472,Asthma,healthy control airway epithelium,other
+GSE76925,COPD,non-diseased lung tissue,non-diseased control tissue
+GSE47460,COPD,non-diseased lung tissue,non-diseased control tissue
+GSE33814,NAFLD,non-diseased liver tissue,non-diseased control tissue
+GSE66676,NAFLD,non-diseased liver tissue,non-diseased control tissue

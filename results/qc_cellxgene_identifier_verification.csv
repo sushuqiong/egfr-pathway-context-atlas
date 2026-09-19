@@ -1,0 +1,6 @@
+context,dataset_version_id,collection_id,dataset_title,api_cell_count,local_status,status
+CRC,81bd8922-b69a-45ea-9b2a-032c480c0e37,1cbfb478-2c7f-4d15-b522-9f74e9fe52a8,progressive_plasticity_during_crc_metastasis_epithelial,47107,verified live 2026-09-19; cell count matches the locally processed file,verified live
+IBD,5e75dd8f-5c5f-4056-ade2-117748429022,7c7bd6c2-925b-4034-baab-620ef1b760e1,IBD and HC 10x Single-cell transcriptomics data,46700,verified live 2026-09-19; cell count matches the locally processed file,verified live
+LUAD,229e74ee-9b3e-4ab2-bddb-9eccbac85b48,0bebef1a-4607-4584-9070-dacf89a0d635,scRNA-seq of Lung adenocarcinoma with histological subtypes,117266,verified live 2026-09-19; cell count matches the locally processed file,verified live
+STAD,c10345ad-7e42-4a1b-ae78-d4d1547b8d06,f11cb29c-b546-4738-9bd8-66ea621a7bd5,Extended - Stomach,70090,verified live 2026-09-19; cell count matches the locally processed file,verified live
+ASTHMA,,GEO GSE193816 (not a CELLxGENE dataset),airway epithelial cells,,GEO series; provenance recorded in source_versions.csv,GEO source
