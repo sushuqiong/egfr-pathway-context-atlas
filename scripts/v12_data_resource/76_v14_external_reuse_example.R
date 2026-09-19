@@ -9,7 +9,14 @@ ACC <- "GSE54129"   # gastric cancer with adjacent normal tissue; not among the 
 cat("== external reuse example:", ACC, "==\n")
 gs <- read.csv(file.path(PK,"04_modules","module_definitions.csv"), stringsAsFactors=FALSE)
 sets <- lapply(split(toupper(gs$gene), gs$module), unique)
-gse <- getGEO(ACC, GSEMatrix=TRUE, getGPL=TRUE, destdir=tempdir())
+cache <- file.path(V14, "results", "external_cache"); dir.create(cache, showWarnings=FALSE, recursive=TRUE)
+gse <- NULL
+for (attempt in 1:4) {
+  gse <- tryCatch(getGEO(ACC, GSEMatrix=TRUE, getGPL=TRUE, destdir=cache), error=function(e) { cat("download attempt", attempt, "failed:", conditionMessage(e), "\n"); NULL })
+  if (!is.null(gse)) break
+  Sys.sleep(20)
+}
+if (is.null(gse)) stop("could not download ", ACC, " after four attempts (transient network failure)")
 eset <- gse[[1]]
 expr <- Biobase::exprs(eset); fd <- Biobase::fData(eset); pd <- Biobase::pData(eset)
 cat("downloaded:", nrow(expr), "probes x", ncol(expr), "samples\n")
@@ -31,9 +38,10 @@ cat("after mapping to symbols:", nrow(expr), "genes\n")
 # deterministic transformation rule (same as the resource)
 v <- as.numeric(expr[1:min(2000,nrow(expr)), 1:min(5,ncol(expr))])
 frac_int <- mean(abs(v-round(v))<1e-8, na.rm=TRUE); mx <- max(v, na.rm=TRUE)
-logged <- frac_int>0.90 && mx>50
-if (!logged) expr <- log2(expr+1)
-cat(sprintf("integer fraction %.3f, input max %.2f -> log2 applied: %s\n", frac_int, mx, !logged))
+raw_intensities <- (frac_int > 0.90) && (mx > 50)     # same deterministic rule as the internal pipeline
+if (raw_intensities) expr <- log2(expr+1)
+cat(sprintf("integer fraction %.3f, input max %.2f -> raw intensities: %s -> log2 applied: %s\n",
+            frac_int, mx, raw_intensities, raw_intensities))
 # group labels from the series metadata (title text of each sample)
 txt <- tolower(paste(pd$title, pd$source_name_ch1, pd$characteristics_ch1))
 grp <- ifelse(grepl("normal|adjacent|non-?tumou?r|healthy", txt), "Control",

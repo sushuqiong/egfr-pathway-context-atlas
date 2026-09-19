@@ -53,7 +53,7 @@ pC <- ggplot(aud, aes(reorder(lab, cells_used), cells_used)) + geom_col(fill="#7
   theme(axis.text.y=element_text(size=8.3))
 fig1 <- pA / pB / pC
 ggsave(file.path(F,"Fig1_resource_overview.png"), fig1, width=W, height=9.3, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=9.3)
+ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=9.3, device=cairo_pdf)
 ## ---------------- Figure 2 (unchanged panels, re-rendered) ----------------
 scc <- read.csv(file.path(R,"v12_sc_comparisons.csv"), stringsAsFactors=FALSE)
 exc <- data.frame(label=c("Adenocarcinoma samples excluded (squamous oesophageal layer)",
@@ -78,7 +78,7 @@ p2c <- ggplot(pc[is.finite(pc$yi),], aes(yi)) + geom_histogram(bins=26, fill="#3
   labs(x="per-cohort standardized effect (SD units)", y="cohort-module pairs",
        title=wrap_title("C  Estimates layer (all effects, including non-significant)")) + th()
 ggsave(file.path(F,"Fig2_technical_validation.png"), p2a / p2b / p2c, width=W, height=8.2, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig2_technical_validation.pdf"), p2a / p2b / p2c, width=W, height=8.2)
+ggsave(file.path(F,"Fig2_technical_validation.pdf"), p2a / p2b / p2c, width=W, height=8.2, device=cairo_pdf)
 ## ---------------- Figure 3 (panel A summarised; detail -> Supplementary Table S10) ----------------
 con <- read.csv(file.path(R,"v13_qc_cross_cohort_consistency.csv"), stringsAsFactors=FALSE) %>% filter(k>=2) %>%
   mutate(concordance=suppressWarnings(as.numeric(as.character(concordance))), k=as.integer(k)) %>%
@@ -112,7 +112,7 @@ p3d <- ggplot(vif, aes(r2, v)) + geom_point(size=1.8, colour="#14457B") + geom_h
        title=wrap_title("D  Model R2 versus VIF")) + th(9.5)
 fig3 <- (p3a / p3b) | (p3c / p3d)
 ggsave(file.path(F,"Fig3_comparability_checks.png"), fig3, width=W, height=8.6, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig3_comparability_checks.pdf"), fig3, width=W, height=8.6)
+ggsave(file.path(F,"Fig3_comparability_checks.pdf"), fig3, width=W, height=8.6, device=cairo_pdf)
 ## ---------------- Figure 4 ----------------
 cg <- read.csv(file.path(R,"v12_common_gene_sensitivity_summary.csv"), stringsAsFactors=FALSE)
 flagcol <- names(cg)[grep("flag", names(cg), ignore.case=TRUE)][1]; spcol <- names(cg)[grep("spearman", names(cg), ignore.case=TRUE)][1]
@@ -131,5 +131,5 @@ p4b <- ggplot(col, aes(as.numeric(r2_overall))) + geom_histogram(bins=12, fill="
   geom_vline(xintercept=median(as.numeric(col$r2_overall)), linetype="dashed", colour="#A6123C") +
   labs(x="R2 (disease ~ composition)", y="cohorts", title=wrap_title("B  Disease status versus composition")) + th(9.5)
 ggsave(file.path(F,"Fig4_sensitivity_checks.png"), p4a / p4b, width=W, height=7.4, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig4_sensitivity_checks.pdf"), p4a / p4b, width=W, height=7.4)
+ggsave(file.path(F,"Fig4_sensitivity_checks.pdf"), p4a / p4b, width=W, height=7.4, device=cairo_pdf)
 cat("v14 figures written\n")

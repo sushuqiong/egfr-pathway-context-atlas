@@ -154,10 +154,13 @@ three_line(doc,["Check","Result"],[
  ["Collinearity: overall model","R2 of disease status on the four compartments: median 0.33, maximum 0.89"],
  ["Collinearity: per-predictor VIF","median 2.09, maximum 4.53"],
  ["Curation flow","27 series retrieved; 26 case-control cohorts; 1 treatment-response series excluded; 3 downloaded series not carried forward"]],8)
-head(doc,"Supplementary Table S10. Cross-cohort direction consistency, all context-module pairs")
+head(doc,"Supplementary Table S10. Cross-cohort direction consistency (summary; detail deposited)")
 con=[r for r in rd(os.path.join(R,"v13_qc_cross_cohort_consistency.csv")) if int(r["k"])>=2]
-three_line(doc,["Context","Module","Cohorts","Cohorts with positive effect","Cohorts with negative effect","Median effect","Same direction in all cohorts"],
-  [[r["disease"],r["feature"],r["k"],r["n_pos"],r["n_neg"],round(float(r["median_yi"]),3),r["direction_consistent"]] for r in con],7.5)
+same=sum(1 for r in con if str(r["direction_consistent"]).upper()=="TRUE")
+three_line(doc,["Statistic","Value"],[
+ ["Context-module pairs with at least two cohorts", len(con)],
+ ["Pairs whose effect direction is the same in every contributing cohort", f"{same} ({100*same/max(1,len(con)):.0f}%)"],
+ ["Detail (one row per pair with cohort counts, sign counts and median effect)","deposited as 08_qc/qc_cross_cohort_consistency.csv (165 rows); not printed here because oversized tables are deposited rather than printed"]],8)
 head(doc,"Supplementary Table S11. Expression matrix quality control per cohort")
 three_line(doc,["Accession","Context","Samples","Genes","Missing fraction","Outlier samples (>3 MAD)","Zero-variance genes"],
   [[r["accession"],r["context"],r["n_samples"],r["n_genes"],r["missing_fraction"],r["outlier_samples_3mad"],r["gene_sd_zero"]] for r in rd(os.path.join(PK,"08_qc","qc_expression_matrix_per_cohort.csv"))],7.5)
