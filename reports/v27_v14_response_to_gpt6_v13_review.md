@@ -69,7 +69,7 @@
 证据：该字典文件 + Supplementary Table S15。
 
 **15. xCell 与模块分数共享基因：需限定为敏感性分析，最好提供非重叠标记集或另一方法。**
-→ 双重落实：① 正文明确"adjusted 模型仅作敏感性分析，不作独立校正"；② 新增**独立 marker-proxy 组成分数**（24 个经典标记基因，其中**仅 1 个**与模块基因集重叠），与 xCell 的一致性 Spearman 0.48–0.58 随包。
+→ 双重落实：① 正文明确"adjusted 模型仅作敏感性分析，不作独立校正"；② 新增**独立 marker-proxy 组成分数**（24 个经典标记基因，其中**仅 1 个**与模块基因集重叠），与 xCell 的一致性为 Spearman 0.28（上皮）/0.29（成纤维）/0.58（内皮）/0.56（免疫）随包；内皮与免疫为中等一致，上皮与成纤维仅为弱一致，因此该 marker 面板按粗粒度独立核查定位，不作为 xCell 的替代。
 证据：`05_composition/alternative_method_marker_proxy.csv`、`08_qc/qc_composition_method_agreement.csv`、Supplementary Table S16。
 
 **16. "exact reproduction" 独立性不够；"absolute difference of 0" 应为预设容差。**
