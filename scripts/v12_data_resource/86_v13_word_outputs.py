@@ -130,8 +130,9 @@ for t,b in [
   "(B) Coverage-threshold sensitivity: the number of cohort-module pairs pooled (light) and the number of states surviving BH control (red) as cohorts below 0.60, 0.80 and 0.90 coverage are excluded. "
   "(C) Fraction of each module's members that lie inside the xCell signature panel, with the 20% level marked, showing that module scores and composition scores share input genes. "
   "(D) Overall model R-squared versus the maximum per-predictor VIF within the disease-status model, illustrating how the two collinearity measures differ."),
- ("Supplementary figures.",
-  "Supplementary Figure S1. Marker-proxy versus xCell sensitivity of composition adjustment. "
-  "Supplementary Figure S2. Two-step xCell residualization sensitivity.")]:
+ ("Supplementary material.",
+  "No supplementary figures are required for this descriptor: the composition sensitivity material is presented in Figure 2 panels D and E, "
+  "and the corresponding numerical results are shipped as machine-readable tables in folder 08_qc (common-gene sensitivity, composition "
+  "collinearity, per-predictor VIF, module-versus-signature overlap).")]:
     head(L,t,2); L.add_paragraph(b)
 lp=os.path.join(OUT,"Figure_legends_v13.docx"); L.save(lp); print("legends:",lp)
