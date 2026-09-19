@@ -127,8 +127,10 @@ for t,b in [
   "(A) Documented exclusions, flags and non-testable comparisons on a logarithmic scale. "
   "(B) The comparison design actually used in the single-cell layer, by test type. "
   "(C) The complete estimates layer: all per-cohort standardized effects, faceted by the measure used, including non-significant results. "
-  "(D) Common-gene sensitivity of module scoring: Spearman correlation between full-member and common-gene scoring per module, with flagged modules marked and non-scorable modules labelled n.a. "
-  "(E) Collinearity between disease status and the four composition scores per cohort, with the median marked."),
+  "(C) The complete estimates layer: all per-cohort standardized effects, faceted by the measure used, including non-significant results."),
+ ("Figure 4. Sensitivity analyses.",
+  "(A) Common-gene sensitivity of module scoring: Spearman correlation between full-member and common-gene scoring for each module, with flagged modules marked in red and non-scorable modules labelled n.a. "
+  "(B) Collinearity between disease status and the four composition scores per cohort, with the median marked."),
  ("Figure 3. Comparability and coupling checks.",
   "(A) Cross-cohort direction consistency for every context-module pair with at least two cohorts: the fraction of cohorts sharing the majority effect direction. "
   "(B) Coverage-threshold sensitivity: the number of cohort-module pairs pooled (light) and the number of states surviving BH control (red) as cohorts below 0.60, 0.80 and 0.90 coverage are excluded. "

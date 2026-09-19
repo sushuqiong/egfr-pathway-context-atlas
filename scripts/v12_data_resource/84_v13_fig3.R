@@ -34,14 +34,14 @@ pB <- ggplot(summ, aes(scenario, n, fill=measure)) + geom_col(position=position_
 so <- read.csv(file.path(R,"v13_qc_signature_overlap.csv"), stringsAsFactors=FALSE)
 C1 <- ggplot(so, aes(reorder(module, as.numeric(frac_overlap_xcell)), as.numeric(frac_overlap_xcell))) +
   geom_col(width=.6, fill="#7FA8C9") + coord_flip() + geom_hline(yintercept=0.2, linetype="dashed", colour="#A6123C") +
-  labs(x="fraction of module members inside the xCell signature panel", y=NULL,
+  labs(x="fraction of members in the xCell panel", y=NULL,
        title="C  Module vs xCell panel overlap (dashed: 20%)") + th(9.5) +
   theme(axis.text.y=element_text(size=6.5))
 vif <- read.csv(file.path(R,"v13_qc_vif_by_predictor.csv"), stringsAsFactors=FALSE)
 vif$r2 <- as.numeric(vif$r2_overall); vif$v <- as.numeric(vif$max_vif_predictor)
 pC2 <- ggplot(vif, aes(r2, v)) + geom_point(size=1.8, colour="#14457B") +
   geom_hline(yintercept=5, linetype="dashed", colour="#A6123C") +
-  labs(x="overall R2 (disease status ~ 4 compartment scores)", y="max per-predictor VIF",
+  labs(x="overall R2 (disease ~ composition)", y="max per-predictor VIF",
        title="D  Model R2 vs per-predictor VIF") + th(9.5)
 fig3 <- (pA / pB) | (C1 / pC2)
 fig3 <- pA / pB / (C1 | pC2)

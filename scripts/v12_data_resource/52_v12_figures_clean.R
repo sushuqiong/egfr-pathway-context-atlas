@@ -86,7 +86,11 @@ pE <- ggplot(col, aes(r2_disease_on_composition)) + geom_histogram(bins=12, fill
   geom_vline(xintercept=median(col$r2_disease_on_composition), linetype="dashed", colour="#A6123C") +
   labs(x="R2 (disease ~ composition)", y="cohorts",
        title="E  Disease status vs composition") + th(9.5)
-fig2 <- pA / pB / pC / pD / pE
-ggsave(file.path(F,"Fig2_technical_validation.png"), fig2, width=W, height=8.8, dpi=300, limitsize=FALSE)
-ggsave(file.path(F,"Fig2_technical_validation.pdf"), fig2, width=W, height=8.8)
-cat("clean figures written (no overall titles, no top/bottom legends)\n")
+fig2 <- pA / pB / pC
+ggsave(file.path(F,"Fig2_technical_validation.png"), fig2, width=W, height=7.6, dpi=300, limitsize=FALSE)
+ggsave(file.path(F,"Fig2_technical_validation.pdf"), fig2, width=W, height=7.6)
+fig4 <- pD / pE
+ggsave(file.path(F,"Fig4_sensitivity_checks.png"), fig4, width=W, height=6.4, dpi=300, limitsize=FALSE)
+ggsave(file.path(F,"Fig4_sensitivity_checks.pdf"), fig4, width=W, height=6.4)
+cat("figures written: Fig1 (overview), Fig2 (validation A-C), Fig4 (sensitivity D-E)
+")
