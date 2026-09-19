@@ -4,8 +4,8 @@
 #   * legends replaced by direct labelling, faceting or in-panel annotations
 #   * all figures <= 6.7 in (17 cm) wide at 300 dpi
 suppressPackageStartupMessages({library(dplyr); library(tidyr); library(ggplot2); library(patchwork)})
-R  <- "C:/Users/fengq/Desktop/EGFR/EGFR的v12/results"
-F  <- "C:/Users/fengq/Desktop/EGFR/EGFR的v12/02_figures"
+R  <- "C:/Users/fengq/Desktop/EGFR/EGFR的v13/results"
+F  <- "C:/Users/fengq/Desktop/EGFR/EGFR的v13/02_figures"
 W  <- 6.7
 th <- function(base=10) theme_bw(base_size=base) +
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_line(colour="grey93", linewidth=.25),
@@ -39,7 +39,7 @@ aud$arm_lab <- ifelse(aud$arms=="excluded", "excluded: no control arm", paste0(a
 pC <- ggplot(aud, aes(factor(context, levels=rev(c("CRC","IBD","STAD","ASTHMA","LUAD"))), cells_used)) +
   geom_col(fill="#7FA8C9", width=.7) + geom_text(aes(label=arm_lab), hjust=-0.05, size=2.8, colour="grey25") +
   coord_flip() + scale_y_continuous(expand=expansion(mult=c(0,.45))) +
-  labs(x=NULL, y="single cells used", title="C  Single-cell datasets (arms available in each)") + th()
+  labs(x=NULL, y="single cells used", title="C  Single-cell datasets (arms in each)") + th()
 fig1 <- pA / pB / pC
 ggsave(file.path(F,"Fig1_resource_overview.png"), fig1, width=W, height=9.6, dpi=300, limitsize=FALSE)
 ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=9.6)
@@ -55,18 +55,18 @@ exc <- data.frame(label=c("Adenocarcinoma samples excluded (squamous oesophageal
 pA <- ggplot(exc, aes(factor(label, levels=rev(label)), n)) + geom_col(fill="#A6123C", width=.62) +
   geom_text(aes(label=format(n, big.mark=",")), hjust=-0.08, size=2.9, colour="grey25") + coord_flip() +
   scale_y_log10(expand=expansion(mult=c(0,.35))) +
-  labs(x=NULL, y="records (log scale)", title="A  Exclusions, flags and non-testable comparisons") + th() +
+  labs(x=NULL, y="records (log scale)", title="A  Exclusions, flags, not testable") + th() +
   theme(axis.text.y=element_text(size=7.5))
 tt <- as.data.frame(table(scc$test_used)); names(tt) <- c("test","n")
 pB <- ggplot(tt, aes(n, reorder(test, n))) + geom_col(fill="#14457B", width=.62) +
   geom_text(aes(label=n), hjust=-0.15, size=2.9, colour="grey25") + scale_x_continuous(expand=expansion(mult=c(0,.2))) +
-  labs(x="number of comparisons", y=NULL, title="B  Single-cell comparison design actually used") + th() +
+  labs(x="number of comparisons", y=NULL, title="B  Single-cell comparison design") + th() +
   theme(axis.text.y=element_text(size=7.5))
 pc <- read.csv(file.path(R,"v12_percohort_effects.csv"), stringsAsFactors=FALSE)
 pC <- ggplot(pc[is.finite(pc$yi),], aes(yi)) + geom_histogram(bins=28, fill="#3C6E9F", colour="white", linewidth=.2) +
   facet_wrap(~measure, nrow=2, scales="free_y") + geom_vline(xintercept=0, linetype="dashed", colour="grey35") +
   labs(x="per-cohort standardized effect (SD units)", y="cohort-module pairs",
-       title="C  Estimates layer (all effects, including non-significant)") + th()
+       title="C  Estimates layer (all effects)") + th()
 cg <- read.csv(file.path(R,"v12_common_gene_sensitivity_summary.csv"), stringsAsFactors=FALSE)
 flagcol <- names(cg)[grep("flag", names(cg), ignore.case=TRUE)][1]; spcol <- names(cg)[grep("spearman", names(cg), ignore.case=TRUE)][1]
 cg$spearman <- suppressWarnings(as.numeric(cg[[spcol]])); cg$flag <- as.character(cg[[flagcol]])
@@ -79,13 +79,13 @@ pD <- ggplot(cg, aes(v, reorder(module, v), fill=status)) + geom_col(width=.62) 
   geom_vline(xintercept=median(cg$spearman, na.rm=TRUE), linetype="dashed", colour="grey45") +
   scale_x_continuous(limits=c(0,1.15)) +
   labs(x="Spearman rho (full vs common-gene scoring)", y=NULL,
-       title="D  Common-gene sensitivity (red = direction disagreement; grey = not scorable)") + th(9.5) +
+       title="D  Common-gene sensitivity") + th(9.5) +
   theme(axis.text.y=element_text(size=7.5))
 col <- read.csv(file.path(R,"v12_qc_composition_collinearity.csv"), stringsAsFactors=FALSE)
 pE <- ggplot(col, aes(r2_disease_on_composition)) + geom_histogram(bins=12, fill="#7FA8C9", colour="white") +
   geom_vline(xintercept=median(col$r2_disease_on_composition), linetype="dashed", colour="#A6123C") +
   labs(x="R2 (disease ~ composition)", y="cohorts",
-       title="E  Disease status vs tissue composition (per cohort)") + th(9.5)
+       title="E  Disease status vs composition") + th(9.5)
 fig2 <- pA / pB / pC / pD / pE
 ggsave(file.path(F,"Fig2_technical_validation.png"), fig2, width=W, height=12.2, dpi=300, limitsize=FALSE)
 ggsave(file.path(F,"Fig2_technical_validation.pdf"), fig2, width=W, height=12.2)

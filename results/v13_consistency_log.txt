@@ -1,0 +1,62 @@
+== cross-cohort direction consistency (k>=2) ==
+context-module pairs with k>=2: 165 | all cohorts same sign: 112 (68%)
+ disease pairs same_sign median_concordance
+  Asthma    17        12                1.0
+    COPD    15        10                1.0
+     CRC    17        13                1.0
+    ESCC    17        14                1.0
+     HCC    17        15                1.0
+     IBD    17        10                1.0
+    LUAD    17        12                1.0
+   NAFLD    16         6                0.5
+    PAAD    16        10                1.0
+    STAD    16        10                1.0
+
+== coverage-threshold sensitivity ==
+[all cohorts] k>=2: 165 | BH<0.05: 13
+[coverage >= 0.60] k>=2: 165 | BH<0.05: 13
+[coverage >= 0.80] k>=2: 147 | BH<0.05: 12
+[coverage >= 0.90] k>=2: 130 | BH<0.05: 6
+
+== signature overlap (module members vs xCell panel) ==
+          module members overlap_xcell_genes frac_overlap_xcell
+   EPH_RECEPTORS       4                   4                  1
+  ERBB_RECEPTORS       4                   4                  1
+    HGF_MET_AXIS       3                   3                  1
+        JAK_STAT       9                   9                  1
+ PDGFR_KIT_CSF1R       5                   5                  1
+        RAS_MAPK      12                  12                  1
+    RET_ALK_NTRK       6                   6                  1
+         SRC_FAK       5                   5                  1
+ compartment_scores_using_overlapping_genes
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                       <NA>
+                                                                                                                                                   note
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+ xCell derives all compartment scores from its 489-gene signature panel; overlap with module members creates a shared input between score and covariate
+modules with >20% of members inside the xCell panel: 17 of 17 
+max overlap fraction: 1 
+
+== VIF within the disease-status model ==
+cohorts: 26 | overall model R2 median 0.329 max 0.887 | max per-predictor VIF median 2.09 max 4.53
+note: overall model R2 measures how well the four scores jointly explain disease status; per-predictor VIF measures
+ collinearity among the scores themselves. A high overall R2 with modest VIF means the model as a whole predicts
+ case status well without the individual covariates being redundant.
+ accession   n r2_overall max_vif_predictor vif_epi vif_fib vif_end vif_imm
+  GSE32863 114  0.8865145              3.35    2.64    3.17    3.35    1.57
+  GSE10072  66  0.8127638              2.75    2.32    2.28    2.75    2.15
+  GSE19804 120  0.6692753              3.19    2.87    3.19    3.16    2.36
+  GSE23878  59  0.5965280              1.65    1.65    1.16    1.22    1.54
+  GSE75214  97  0.5416735              4.06    4.06    2.15    1.48    2.44

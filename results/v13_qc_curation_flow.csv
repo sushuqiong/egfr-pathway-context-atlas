@@ -1,0 +1,10 @@
+﻿step,n,detail
+1. Series identified across ten disease contexts,candidate series as listed below,"contexts: LUAD, CRC, STAD, PAAD, HCC, ESCC, IBD, COPD, NAFLD, asthma"
+2. Series with processed matrices available in this workspace,27,"GSE10072, GSE13911, GSE15471, GSE16879, GSE179285, GSE19804, GSE20347, GSE23400, GSE23878, GSE27342, GSE28735, GSE32863, GSE33814, GSE41258, GSE4302, GSE43696, GSE44076, GSE47460, GSE57957, GSE62232, GSE62452, GSE63089, GSE66676, GSE67472, GSE75214, GSE76925, GSE87473"
+3. Series retained as case-control cohorts,26,case and control samples on the same platform (see registry)
+4. Series excluded after review: treatment-response design,1,GSE16879 (Responder vs NonResponder; no case/control arm)
+5. Series used only as external validation,0,"GSE39582 (CRC, independent platform)"
+6. Series evaluated but not carried forward,0,none
+7. Cohorts analysed in the estimates layer,26,one cohort (GSE47460/COPD) has 15 rather than 17 estimable modules; 8 cohort-module pairs are reported as not estimable
+8. Single-cell datasets reviewed,5,"CRC, IBD, STAD, asthma used; LUAD excluded (tumour-only, no control arm)"
+9. Tumour molecular contexts reviewed,6,"LUAD, CRC, STAD, PAAD, HCC, ESCC (oesophageal layer restricted to squamous histology)"

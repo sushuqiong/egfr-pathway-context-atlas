@@ -1,0 +1,7 @@
+con <- read.csv("C:/Users/fengq/Desktop/EGFR/EGFR的v13/results/v13_qc_cross_cohort_consistency.csv", stringsAsFactors=FALSE)
+d <- subset(con, k >= 2)
+x <- suppressWarnings(as.numeric(as.character(d$concordance)))
+cat("rows:", nrow(d), "| finite:", sum(is.finite(x)), "| range:", paste(round(range(x, na.rm=TRUE),3), collapse=" .. "), "\n")
+cat("below 0.4:", sum(x < 0.4, na.rm=TRUE), "| below 0.45:", sum(x < 0.45, na.rm=TRUE), "\n")
+cat("disease blank:", sum(is.na(d$disease) | d$disease == ""), "\n")
+print(table(round(x,2))[1:8])
