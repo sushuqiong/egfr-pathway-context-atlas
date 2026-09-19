@@ -1,0 +1,5 @@
+dataset,multiplicity,comparisons,significant_fdr_0_05
+"primary donor set (all cells, no minimum)",BH within context x module x comparison type,240,37
+"primary donor set (all cells, no minimum)",BH across all comparisons jointly,240,35
+sensitivity donor set (>=10 cells per donor per cell type and arm),BH within context x module x comparison type,200,41
+sensitivity donor set (>=10 cells per donor per cell type and arm),BH across all comparisons jointly,200,30

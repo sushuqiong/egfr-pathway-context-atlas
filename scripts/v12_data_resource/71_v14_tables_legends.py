@@ -92,6 +92,18 @@ for r in ccase:
     a["p"]+=int(r["n_unique_patients"]) if str(r["n_unique_patients"]).isdigit() else 0
     a["pair"]+=int(r["patients_with_both_arms"] or 0) if r["paired_design_used"]=="yes" else 0
     a["pl"].add(r["platform"]); a["np_"]+=1 if r["patient_identity_available"]=="no" else 0
+scp=rd(os.path.join(PK,"06_single_cell","single_cell_comparisons.csv"))
+def _n(v):
+    try: return float(v)
+    except Exception: return None
+_prim_nt=sum(1 for r in scp if r["test_used"]=="not testable")
+_prim_fam=sum(1 for r in scp if _n(r.get("fdr")) is not None and _n(r["fdr"])<0.05)
+_scs=rd(os.path.join(PK,"06_single_cell","single_cell_sensitivity_min10cells_per_donor.csv"))
+_nt2=sum(1 for r in _scs if r["test_used"]=="not testable")
+_fam2=sum(1 for r in _scs if _n(r.get("fdr_family")) is not None and _n(r["fdr_family"])<0.05)
+_gl2=sum(1 for r in _scs if _n(r.get("fdr_global")) is not None and _n(r["fdr_global"])<0.05)
+_scf=rd(os.path.join(PK,"06_single_cell","single_cell_multiplicity_strategy_comparison.csv"))
+_glp=next((r["significant_fdr_0_05"] for r in _scf if "jointly" in r["multiplicity"]), "not available")
 doc=Document(); st=doc.styles['Normal']; st.font.name='Times New Roman'; st.font.size=Pt(10)
 head(doc,"Table 1. Cohort composition of the resource by disease context")
 three_line(doc,["Context","Cohorts","Assay records","Patients (with identifiers)","Patients with both tissues","Platforms","Cohorts without patient identifiers"],
@@ -186,6 +198,12 @@ three_line(doc,["Field","Definition"],[
 head(doc,"Supplementary Table S16. Marker-proxy composition method agreement with xCell")
 three_line(doc,["Compartment","Samples","Spearman vs xCell","Pearson vs xCell"],
   [[r["compartment"],r["n"],r["spearman_vs_xcell"],r["pearson_vs_xcell"]] for r in rd(os.path.join(PK,"08_qc","qc_composition_method_agreement.csv"))],8)
+head(doc,"Supplementary Table S17. Single-cell sensitivity analyses")
+three_line(doc,["Analysis","Comparisons","Not testable","Significant, FDR < 0.05"],[
+ ["Primary: donor means from all cells; BH within context x module x comparison type", len(scp), _prim_nt, _prim_fam],
+ ["Sensitivity 1: only donors contributing at least ten cells per cell type and arm", len(_scs), _nt2, _fam2],
+ ["Sensitivity 2: same donors, single BH correction across all comparisons", len(_scs), _nt2, _gl2],
+ ["Primary under a single BH correction across all comparisons (for reference)", len(scp), _prim_nt, _glp]],8)
 tp=os.path.join(OUT,"Tables_v14.docx"); doc.save(tp); print("tables:",tp)
 # ---------- 4. legends ----------
 L=Document(); st2=L.styles['Normal']; st2.font.name='Times New Roman'; st2.font.size=Pt(11)
@@ -207,6 +225,6 @@ for t,b in [
   "(A) Common-gene sensitivity of module scoring: Spearman correlation between full-member and common-gene scoring per module; red bars mark modules whose effect direction disagreed in at least 20% of cohorts, grey bars mark modules with too few shared members to re-score. "
   "(B) Collinearity between disease status and the composition scores, per cohort, with the median marked."),
  ("Supplementary material.",
-  "All numerical supplementary material is provided as machine-readable tables in the data deposit; Tables S1-S16 accompany this manuscript, and no supplementary figures are required.")]:
+  "All numerical supplementary material is provided as machine-readable tables in the data deposit; Tables S1-S17 accompany this manuscript, and no supplementary figures are required.")]:
     head(L,t,2); L.add_paragraph(b)
 lp=os.path.join(OUT,"Figure_legends_v14.docx"); L.save(lp); print("legends:",lp)

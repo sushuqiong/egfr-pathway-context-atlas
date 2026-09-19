@@ -1,0 +1,201 @@
+﻿context,module,cell_type,comparison_type,n_donors_a,n_donors_b,n_overlap_donors,median_diff,test_used,p_used,fdr_family,fdr_global
+CRC,ERBB_RECEPTORS,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.12022273183340054,not testable,nan,nan,nan
+CRC,ERBB_RECEPTORS,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.18988011759903967,wilcoxon-signed-rank (paired donors),0.03125,0.078125,0.10808015513897867
+CRC,ERBB_RECEPTORS,colonocyte,tumour-vs-adjacent,7,17,7,-0.078063325935263,wilcoxon-signed-rank (paired donors),0.296875,0.37109375,0.5013888888888889
+CRC,ERBB_RECEPTORS,early colonocyte,tumour-vs-adjacent,13,18,10,0.018305219030116532,wilcoxon-signed-rank (paired donors),1.0,1.0,1.0
+CRC,ERBB_RECEPTORS,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.03899299972489735,not testable,nan,nan,nan
+CRC,ERBB_RECEPTORS,malignant cell,tumour-vs-adjacent,26,10,8,0.10970857555586924,wilcoxon-signed-rank (paired donors),0.0078125,0.0390625,0.04398148148148148
+CRC,ERBB_RECEPTORS,secretory cell,tumour-vs-adjacent,11,13,7,-0.06273011134552772,wilcoxon-signed-rank (paired donors),0.296875,0.37109375,0.5013888888888889
+CRC,ERBB_RECEPTORS,tuft cell of colon,tumour-vs-adjacent,3,8,2,-0.14276963595051329,not testable,nan,nan,nan
+CRC,ERBB_RECEPTORS,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.0011528962263262351,0.0046115849053049406,0.014036383784282944
+CRC,ERBB_RECEPTORS,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),0.014415127518120565,0.02883025503624113,0.059375
+CRC,ERBB_RECEPTORS,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.04891682603894105,0.06522243471858806,0.15174199097793958
+CRC,ERBB_RECEPTORS,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),0.3329216080655659,0.3329216080655659,0.536780866192631
+CRC,ERBB_LIGANDS,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,0.07386080656626688,not testable,nan,nan,nan
+CRC,ERBB_LIGANDS,colon goblet cell,tumour-vs-adjacent,7,15,6,0.06774286113480626,wilcoxon-signed-rank (paired donors),0.6875,0.6875,0.8403954248145444
+CRC,ERBB_LIGANDS,colonocyte,tumour-vs-adjacent,7,17,7,0.10434052930066748,wilcoxon-signed-rank (paired donors),0.109375,0.13671875,0.2817796610169492
+CRC,ERBB_LIGANDS,early colonocyte,tumour-vs-adjacent,13,18,10,0.09595508491718448,wilcoxon-signed-rank (paired donors),0.009765625,0.0390625,0.049479166666666664
+CRC,ERBB_LIGANDS,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.02280175589366097,not testable,nan,nan,nan
+CRC,ERBB_LIGANDS,malignant cell,tumour-vs-adjacent,26,10,8,0.08356728910008832,wilcoxon-signed-rank (paired donors),0.015625,0.0390625,0.059375
+CRC,ERBB_LIGANDS,secretory cell,tumour-vs-adjacent,11,13,7,0.059406856223219826,wilcoxon-signed-rank (paired donors),0.03125,0.052083333333333336,0.10808015513897867
+CRC,ERBB_LIGANDS,tuft cell of colon,tumour-vs-adjacent,3,8,2,0.019113576608664543,not testable,nan,nan,nan
+CRC,ERBB_LIGANDS,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.1924880059840529,0.1924880059840529,0.3953807690483249
+CRC,ERBB_LIGANDS,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),0.07990693953467842,0.1065425860462379,0.21689026445127002
+CRC,ERBB_LIGANDS,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),2.724684036169371e-06,9.611232641534963e-06,0.0001035379933744361
+CRC,ERBB_LIGANDS,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),4.805616320767481e-06,9.611232641534963e-06,0.00014398003574485913
+CRC,VEGF_PDGF_AXIS,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,0.049202161460138845,not testable,nan,nan,nan
+CRC,VEGF_PDGF_AXIS,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.02667897666226518,wilcoxon-signed-rank (paired donors),0.15625,0.15625,0.3392857142857143
+CRC,VEGF_PDGF_AXIS,colonocyte,tumour-vs-adjacent,7,17,7,0.06609461144694298,wilcoxon-signed-rank (paired donors),0.015625,0.01953125,0.059375
+CRC,VEGF_PDGF_AXIS,early colonocyte,tumour-vs-adjacent,13,18,10,0.05378064739444124,wilcoxon-signed-rank (paired donors),0.001953125,0.009765625,0.017285546697311402
+CRC,VEGF_PDGF_AXIS,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.09066503277845467,not testable,nan,nan,nan
+CRC,VEGF_PDGF_AXIS,malignant cell,tumour-vs-adjacent,26,10,8,0.08246846374146286,wilcoxon-signed-rank (paired donors),0.0078125,0.01953125,0.04398148148148148
+CRC,VEGF_PDGF_AXIS,secretory cell,tumour-vs-adjacent,11,13,7,0.04461775970358821,wilcoxon-signed-rank (paired donors),0.015625,0.01953125,0.059375
+CRC,VEGF_PDGF_AXIS,tuft cell of colon,tumour-vs-adjacent,3,8,2,0.07887899059115164,not testable,nan,nan,nan
+CRC,VEGF_PDGF_AXIS,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.22664632046144972,0.22664632046144972,0.4253116137054365
+CRC,VEGF_PDGF_AXIS,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),1.0379350651352964e-05,1.698429345037308e-05,0.0002253801855722358
+CRC,VEGF_PDGF_AXIS,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),3.462631268728164e-07,1.3850525074912656e-06,3.653484469824838e-05
+CRC,VEGF_PDGF_AXIS,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),1.2738220087779809e-05,1.698429345037308e-05,0.00024202618166781637
+CRC,HGF_MET_AXIS,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.043230594813869226,not testable,nan,nan,nan
+CRC,HGF_MET_AXIS,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.03957063888262115,wilcoxon-signed-rank (paired donors),0.03125,0.052083333333333336,0.10808015513897867
+CRC,HGF_MET_AXIS,colonocyte,tumour-vs-adjacent,7,17,7,0.02803955233519974,wilcoxon-signed-rank (paired donors),0.15625,0.1953125,0.3392857142857143
+CRC,HGF_MET_AXIS,early colonocyte,tumour-vs-adjacent,13,18,10,0.03737534154298728,wilcoxon-signed-rank (paired donors),0.00390625,0.01953125,0.026988636363636364
+CRC,HGF_MET_AXIS,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.017453367379464187,not testable,nan,nan,nan
+CRC,HGF_MET_AXIS,malignant cell,tumour-vs-adjacent,26,10,8,0.0934291235508323,wilcoxon-signed-rank (paired donors),0.0078125,0.01953125,0.04398148148148148
+CRC,HGF_MET_AXIS,secretory cell,tumour-vs-adjacent,11,13,7,-0.0016484816545958292,wilcoxon-signed-rank (paired donors),0.8125,0.8125,0.9216417910447762
+CRC,HGF_MET_AXIS,tuft cell of colon,tumour-vs-adjacent,3,8,2,0.009749697737574479,not testable,nan,nan,nan
+CRC,HGF_MET_AXIS,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.0017800486905705504,0.002645564310955634,0.017285546697311402
+CRC,HGF_MET_AXIS,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),0.0019841732332167255,0.002645564310955634,0.017285546697311402
+CRC,HGF_MET_AXIS,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.0005143741000351157,0.0020574964001404627,0.007107714836848872
+CRC,HGF_MET_AXIS,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),0.047571097720386674,0.047571097720386674,0.15064180944789113
+CRC,EPH_RECEPTORS,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.02085988338560962,not testable,nan,nan,nan
+CRC,EPH_RECEPTORS,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.021774550525613105,wilcoxon-signed-rank (paired donors),0.21875,0.2734375,0.415625
+CRC,EPH_RECEPTORS,colonocyte,tumour-vs-adjacent,7,17,7,-0.02725143047121953,wilcoxon-signed-rank (paired donors),0.15625,0.2604166666666667,0.3392857142857143
+CRC,EPH_RECEPTORS,early colonocyte,tumour-vs-adjacent,13,18,10,0.01275698966017199,wilcoxon-signed-rank (paired donors),0.4921875,0.4921875,0.6821257174198351
+CRC,EPH_RECEPTORS,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,-0.045058461712517796,not testable,nan,nan,nan
+CRC,EPH_RECEPTORS,malignant cell,tumour-vs-adjacent,26,10,8,0.15514997808287784,wilcoxon-signed-rank (paired donors),0.0078125,0.0390625,0.04398148148148148
+CRC,EPH_RECEPTORS,secretory cell,tumour-vs-adjacent,11,13,7,-0.08206653507549598,wilcoxon-signed-rank (paired donors),0.078125,0.1953125,0.21689026445127002
+CRC,EPH_RECEPTORS,tuft cell of colon,tumour-vs-adjacent,3,8,2,-0.1370478785516212,not testable,nan,nan,nan
+CRC,EPH_RECEPTORS,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),5.68342246361286e-06,1.136684492722572e-05,0.00014398003574485913
+CRC,EPH_RECEPTORS,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),5.578147814056544e-07,2.2312591256226175e-06,3.653484469824838e-05
+CRC,EPH_RECEPTORS,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.014416045806274588,0.019221394408366118,0.059375
+CRC,EPH_RECEPTORS,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),0.041274260475501375,0.041274260475501375,0.13348271472928105
+CRC,JAK_STAT,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.07266713524112305,not testable,nan,nan,nan
+CRC,JAK_STAT,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.0566548196318204,wilcoxon-signed-rank (paired donors),0.21875,0.3645833333333333,0.415625
+CRC,JAK_STAT,colonocyte,tumour-vs-adjacent,7,17,7,0.06427630601184707,wilcoxon-signed-rank (paired donors),0.015625,0.0390625,0.059375
+CRC,JAK_STAT,early colonocyte,tumour-vs-adjacent,13,18,10,0.06362248562121024,wilcoxon-signed-rank (paired donors),0.013671875,0.0390625,0.059375
+CRC,JAK_STAT,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.1653687747583897,not testable,nan,nan,nan
+CRC,JAK_STAT,malignant cell,tumour-vs-adjacent,26,10,8,0.05456359022832942,wilcoxon-signed-rank (paired donors),0.3125,0.390625,0.521978021978022
+CRC,JAK_STAT,secretory cell,tumour-vs-adjacent,11,13,7,-0.005528671793214313,wilcoxon-signed-rank (paired donors),0.6875,0.6875,0.8403954248145444
+CRC,JAK_STAT,tuft cell of colon,tumour-vs-adjacent,3,8,2,-0.09662326100076693,not testable,nan,nan,nan
+CRC,JAK_STAT,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.00013587920522093602,0.0005435168208837441,0.0020653639193582277
+CRC,JAK_STAT,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),0.07990693953467842,0.15981387906935685,0.21689026445127002
+CRC,JAK_STAT,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.14869256869714248,0.19825675826285663,0.3392857142857143
+CRC,JAK_STAT,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),0.964355784037191,0.964355784037191,0.9971570011813131
+CRC,SRC_FAK,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.1023614872020299,not testable,nan,nan,nan
+CRC,SRC_FAK,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.03906242812619905,wilcoxon-signed-rank (paired donors),0.15625,0.546875,0.3392857142857143
+CRC,SRC_FAK,colonocyte,tumour-vs-adjacent,7,17,7,-0.03729027258307953,wilcoxon-signed-rank (paired donors),0.578125,0.72265625,0.7510683760683761
+CRC,SRC_FAK,early colonocyte,tumour-vs-adjacent,13,18,10,-0.0011994589259488458,wilcoxon-signed-rank (paired donors),0.845703125,0.845703125,0.9419732492649342
+CRC,SRC_FAK,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.17590940983924622,not testable,nan,nan,nan
+CRC,SRC_FAK,malignant cell,tumour-vs-adjacent,26,10,8,0.05778272016322487,wilcoxon-signed-rank (paired donors),0.4609375,0.72265625,0.6628093601935747
+CRC,SRC_FAK,secretory cell,tumour-vs-adjacent,11,13,7,-0.014412940971374938,wilcoxon-signed-rank (paired donors),0.21875,0.546875,0.415625
+CRC,SRC_FAK,tuft cell of colon,tumour-vs-adjacent,3,8,2,-0.026593112964783956,not testable,nan,nan,nan
+CRC,SRC_FAK,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.002441827707567162,0.009767310830268649,0.019534621660537297
+CRC,SRC_FAK,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),0.3914542381253051,0.4665829048731085,0.5769691569891822
+CRC,SRC_FAK,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.4665829048731085,0.4665829048731085,0.6628093601935747
+CRC,SRC_FAK,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),0.3182609246128816,0.4665829048731085,0.5258223971865
+CRC,WNT_CTNNB1,BEST4+ colonocyte,tumour-vs-adjacent,3,12,2,-0.08623384042114535,not testable,nan,nan,nan
+CRC,WNT_CTNNB1,colon goblet cell,tumour-vs-adjacent,7,15,6,-0.11495627868583111,wilcoxon-signed-rank (paired donors),0.0625,0.09765625,0.19
+CRC,WNT_CTNNB1,colonocyte,tumour-vs-adjacent,7,17,7,0.03770118208119161,wilcoxon-signed-rank (paired donors),0.578125,0.578125,0.7510683760683761
+CRC,WNT_CTNNB1,early colonocyte,tumour-vs-adjacent,13,18,10,-0.11062015602256062,wilcoxon-signed-rank (paired donors),0.009765625,0.0390625,0.049479166666666664
+CRC,WNT_CTNNB1,intestinal crypt stem cell of colon,tumour-vs-adjacent,6,9,2,0.260343415829306,not testable,nan,nan,nan
+CRC,WNT_CTNNB1,malignant cell,tumour-vs-adjacent,26,10,8,0.29916752553045467,wilcoxon-signed-rank (paired donors),0.015625,0.0390625,0.059375
+CRC,WNT_CTNNB1,secretory cell,tumour-vs-adjacent,11,13,7,-0.07985830185986359,wilcoxon-signed-rank (paired donors),0.078125,0.09765625,0.21689026445127002
+CRC,WNT_CTNNB1,tuft cell of colon,tumour-vs-adjacent,3,8,2,-0.13780678146838451,not testable,nan,nan,nan
+CRC,WNT_CTNNB1,malignant cell vs BEST4+ colonocyte,cell-identity,26,12,12,nan,mann-whitney (cell-identity; unpaired),0.004944423157418364,0.004944423157418364,0.032676187822938754
+CRC,WNT_CTNNB1,malignant cell vs colonocyte,cell-identity,26,17,16,nan,mann-whitney (cell-identity; unpaired),7.21082461149639e-07,2.884329844598556e-06,3.653484469824838e-05
+CRC,WNT_CTNNB1,malignant cell vs early colonocyte,cell-identity,26,18,17,nan,mann-whitney (cell-identity; unpaired),0.0037284701172095435,0.004944423157418364,0.026987021800754792
+CRC,WNT_CTNNB1,malignant cell vs secretory cell,cell-identity,26,13,12,nan,mann-whitney (cell-identity; unpaired),6.971510641254896e-05,0.00013943021282509792,0.0011774106860786048
+IBD,ERBB_RECEPTORS,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.03199741435035553,0.053329023917259216,0.10808015513897867
+IBD,ERBB_RECEPTORS,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.7502693385046326,0.7502693385046326,0.8944970183925209
+IBD,ERBB_RECEPTORS,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.012142718755417867,0.030356796888544667,0.059375
+IBD,ERBB_RECEPTORS,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.3845076492135316,0.48063456151691447,0.5729917909848706
+IBD,ERBB_RECEPTORS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.001292824822236587,0.006464124111182934,0.014036383784282944
+IBD,ERBB_LIGANDS,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.8916181857358327,0.8916181857358328,0.9479649567656824
+IBD,ERBB_LIGANDS,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.5532212885154062,0.6915266106442577,0.7376283846872083
+IBD,ERBB_LIGANDS,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.0020469726352079294,0.010234863176039647,0.017285546697311402
+IBD,ERBB_LIGANDS,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.24962292609351436,0.4160382101558573,0.45714078031583355
+IBD,ERBB_LIGANDS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.06679594914889034,0.16698987287222583,0.19524969751214097
+IBD,VEGF_PDGF_AXIS,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.33548804137039434,0.559146735617324,0.536780866192631
+IBD,VEGF_PDGF_AXIS,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.8916181857358327,0.9635854341736694,0.9479649567656824
+IBD,VEGF_PDGF_AXIS,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.9635854341736694,0.9635854341736694,0.9971570011813131
+IBD,VEGF_PDGF_AXIS,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.1797026502908856,0.44925662572721403,0.38032299080805027
+IBD,VEGF_PDGF_AXIS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.013466925231631115,0.06733462615815558,0.059375
+IBD,HGF_MET_AXIS,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.3947683705715457,0.6579472842859094,0.5769691569891822
+IBD,HGF_MET_AXIS,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.009696186166774402,0.04848093083387201,0.049479166666666664
+IBD,HGF_MET_AXIS,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.7786177188876373,0.7786177188876373,0.9034342997780219
+IBD,HGF_MET_AXIS,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.6057226196064835,0.7571532745081044,0.7672486515015459
+IBD,HGF_MET_AXIS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.06679594914889034,0.16698987287222583,0.19524969751214097
+IBD,EPH_RECEPTORS,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.8882172187345627,0.8882172187345627,0.9479649567656824
+IBD,EPH_RECEPTORS,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.33548804137039434,0.43308885144261244,0.536780866192631
+IBD,EPH_RECEPTORS,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.20515220237474951,0.43308885144261244,0.41030440474949903
+IBD,EPH_RECEPTORS,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.34647108115409,0.43308885144261244,0.5483639329813891
+IBD,EPH_RECEPTORS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.08306399482870072,0.41531997414350363,0.22150398620986858
+IBD,JAK_STAT,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.15050635638870935,0.1881329454858867,0.3392857142857143
+IBD,JAK_STAT,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.001292824822236587,0.006464124111182934,0.014036383784282944
+IBD,JAK_STAT,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.003232062055591467,0.008080155138978667,0.02456367162249515
+IBD,JAK_STAT,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.49364361129067014,0.49364361129067014,0.6821257174198351
+IBD,JAK_STAT,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.1246498599439776,0.1881329454858867,0.3055932050239451
+IBD,SRC_FAK,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.21288515406162467,0.31202865761689297,0.415625
+IBD,SRC_FAK,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.6164619694031459,0.6164619694031459,0.774398507018828
+IBD,SRC_FAK,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.1246498599439776,0.31202865761689297,0.3055932050239451
+IBD,SRC_FAK,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.15050635638870935,0.31202865761689297,0.3392857142857143
+IBD,SRC_FAK,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.24962292609351436,0.31202865761689297,0.45714078031583355
+IBD,WNT_CTNNB1,T cell of anorectum,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.8200818789054083,0.9635854341736694,0.9233514488416449
+IBD,WNT_CTNNB1,colon epithelial cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.03199741435035553,0.15998707175177765,0.10808015513897867
+IBD,WNT_CTNNB1,myeloid cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.9635854341736694,0.9635854341736694,0.9971570011813131
+IBD,WNT_CTNNB1,plasma cell,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.3845076492135316,0.8227393521511169,0.5729917909848706
+IBD,WNT_CTNNB1,stromal cell of lamina propria of colon,case-vs-healthy,12,6,0,nan,mann-whitney (donor-disjoint),0.49364361129067014,0.8227393521511169,0.6821257174198351
+STAD,ERBB_RECEPTORS,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.36946194274750377,0.9236548568687595,0.5651254653307681
+STAD,ERBB_RECEPTORS,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.1366104258814518,0.683052129407259,0.32959975768223293
+STAD,ERBB_RECEPTORS,epithelial cell,tumour-vs-adjacent,26,31,2,0.016896769842785042,not testable,nan,nan,nan
+STAD,ERBB_RECEPTORS,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,0.07247889222593235,not testable,nan,nan,nan
+STAD,ERBB_RECEPTORS,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.6053433393365069,1.0,0.7672486515015459
+STAD,ERBB_RECEPTORS,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.020267841956428903,not testable,nan,nan,nan
+STAD,ERBB_RECEPTORS,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),1.0,1.0,1.0
+STAD,ERBB_RECEPTORS,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.8648498717148603,1.0,0.9457351115155306
+STAD,ERBB_LIGANDS,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.8918354527466616,0.8918354527466616,0.9479649567656824
+STAD,ERBB_LIGANDS,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.6911146585645924,0.8638933232057405,0.8403954248145444
+STAD,ERBB_LIGANDS,epithelial cell,tumour-vs-adjacent,26,31,2,-0.016520854683069942,not testable,nan,nan,nan
+STAD,ERBB_LIGANDS,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,-0.03131370456556024,not testable,nan,nan,nan
+STAD,ERBB_LIGANDS,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.1826551205854452,0.8415187001956118,0.38032299080805027
+STAD,ERBB_LIGANDS,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.07109305651862022,not testable,nan,nan,nan
+STAD,ERBB_LIGANDS,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.3630419923326102,0.8415187001956118,0.5630855391281301
+STAD,ERBB_LIGANDS,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.5049112201173671,0.8415187001956118,0.6914099590796379
+STAD,VEGF_PDGF_AXIS,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.2648277100467564,0.9138458795209367,0.4735742579659645
+STAD,VEGF_PDGF_AXIS,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.7061030154647306,0.9138458795209367,0.8518068123066592
+STAD,VEGF_PDGF_AXIS,epithelial cell,tumour-vs-adjacent,26,31,2,-0.013261597852916064,not testable,nan,nan,nan
+STAD,VEGF_PDGF_AXIS,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,-0.01644772021388845,not testable,nan,nan,nan
+STAD,VEGF_PDGF_AXIS,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.6053433393365069,0.9138458795209367,0.7672486515015459
+STAD,VEGF_PDGF_AXIS,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.019122069190158453,not testable,nan,nan,nan
+STAD,VEGF_PDGF_AXIS,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.9138458795209368,0.9138458795209367,0.9646150950498777
+STAD,VEGF_PDGF_AXIS,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.759170653907496,0.9138458795209367,0.8944970183925209
+STAD,HGF_MET_AXIS,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.9783030753359442,0.9783030753359443,0.997287545743774
+STAD,HGF_MET_AXIS,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.34994277302101806,0.8748569325525452,0.5483639329813891
+STAD,HGF_MET_AXIS,epithelial cell,tumour-vs-adjacent,26,31,2,-0.010726008076442257,not testable,nan,nan,nan
+STAD,HGF_MET_AXIS,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,-0.010138798664008263,not testable,nan,nan,nan
+STAD,HGF_MET_AXIS,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.7856093612183639,0.9783030753359443,0.9046410826150857
+STAD,HGF_MET_AXIS,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.024264760220709652,not testable,nan,nan,nan
+STAD,HGF_MET_AXIS,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.20117713361826706,0.8748569325525452,0.4077189907996879
+STAD,HGF_MET_AXIS,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.5285102552308265,0.8808504253847108,0.7151148600647855
+STAD,EPH_RECEPTORS,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.5679151111448195,0.7098938889310245,0.7506356251653267
+STAD,EPH_RECEPTORS,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.371793069296558,0.7098938889310245,0.5651254653307681
+STAD,EPH_RECEPTORS,epithelial cell,tumour-vs-adjacent,26,31,2,-0.006157484236300546,not testable,nan,nan,nan
+STAD,EPH_RECEPTORS,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,-0.03648039846987728,not testable,nan,nan,nan
+STAD,EPH_RECEPTORS,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.46276397057578866,0.7098938889310245,0.6628093601935747
+STAD,EPH_RECEPTORS,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.008082996515777152,not testable,nan,nan,nan
+STAD,EPH_RECEPTORS,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.765030344677814,0.765030344677814,0.8944970183925209
+STAD,EPH_RECEPTORS,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.18172831054491312,0.7098938889310245,0.38032299080805027
+STAD,JAK_STAT,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.8490153628243157,0.9841653411945137,0.9419732492649342
+STAD,JAK_STAT,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.9841653411945137,0.9841653411945137,0.997287545743774
+STAD,JAK_STAT,epithelial cell,tumour-vs-adjacent,26,31,2,0.012220593685713127,not testable,nan,nan,nan
+STAD,JAK_STAT,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,0.02316136823368494,not testable,nan,nan,nan
+STAD,JAK_STAT,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.5316314420218472,0.9841653411945137,0.7151148600647855
+STAD,JAK_STAT,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.0753446219511055,not testable,nan,nan,nan
+STAD,JAK_STAT,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.28993432197093527,0.9841653411945137,0.5007956470407063
+STAD,JAK_STAT,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.8648498717148603,0.9841653411945137,0.9457351115155306
+STAD,SRC_FAK,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.7648175395839272,0.8006181461559037,0.8944970183925209
+STAD,SRC_FAK,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.27501302114502435,0.4814072772441415,0.48606952574469414
+STAD,SRC_FAK,epithelial cell,tumour-vs-adjacent,26,31,2,0.0222200818074171,not testable,nan,nan,nan
+STAD,SRC_FAK,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,0.02018944090475806,not testable,nan,nan,nan
+STAD,SRC_FAK,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.2888443663464849,0.4814072772441415,0.5007956470407063
+STAD,SRC_FAK,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.043526754590539306,not testable,nan,nan,nan
+STAD,SRC_FAK,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.8006181461559035,0.8006181461559037,0.9149921670353183
+STAD,SRC_FAK,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.11713077159301416,0.4814072772441415,0.29673128803563587
+STAD,WNT_CTNNB1,enterocyte,tumour-vs-adjacent,12,13,0,nan,mann-whitney (donor-disjoint),0.6833131587171801,0.8541414483964751,0.8403954248145444
+STAD,WNT_CTNNB1,enteroendocrine cell,tumour-vs-adjacent,17,14,0,nan,mann-whitney (donor-disjoint),0.040928680307670905,0.20464340153835453,0.13348271472928105
+STAD,WNT_CTNNB1,epithelial cell,tumour-vs-adjacent,26,31,2,0.04153138369988503,not testable,nan,nan,nan
+STAD,WNT_CTNNB1,foveolar cell of stomach,tumour-vs-adjacent,26,31,2,-0.03366778238827339,not testable,nan,nan,nan
+STAD,WNT_CTNNB1,intestine goblet cell,tumour-vs-adjacent,13,12,0,nan,mann-whitney (donor-disjoint),0.09711956168340277,0.24279890420850692,0.25452023061857276
+STAD,WNT_CTNNB1,mucous neck cell of gastric gland,tumour-vs-adjacent,25,31,2,-0.04869795550387633,not testable,nan,nan,nan
+STAD,WNT_CTNNB1,peptic cell,tumour-vs-adjacent,5,18,0,nan,mann-whitney (donor-disjoint),0.9712621474635205,0.9712621474635205,0.997287545743774
+STAD,WNT_CTNNB1,type EC enteroendocrine cell,tumour-vs-adjacent,6,17,0,nan,mann-whitney (donor-disjoint),0.25571834725152803,0.4261972454192134,0.4627284378837174
