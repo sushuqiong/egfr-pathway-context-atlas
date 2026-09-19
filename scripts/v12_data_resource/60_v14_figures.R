@@ -8,7 +8,7 @@ R <- file.path(V14,"results"); F <- file.path(V14,"02_figures"); W <- 6.7
 th <- function(base=10) theme_bw(base_size=base) +
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_line(colour="grey93", linewidth=.25),
         legend.position="none", strip.background=element_rect(fill="grey94", colour=NA),
-        strip.text=element_text(face="bold", size=base-1), plot.title=element_text(face="bold", hjust=0, size=base),
+        strip.text=element_text(face="bold", size=base-1), plot.title=element_text(face="bold", hjust=0, size=base-0.3),
         plot.margin=margin(5,14,5,5), axis.text=element_text(size=base-1), axis.title=element_text(size=base-1))
 
 wrap_title <- function(x, width = 38) vapply(as.character(x), function(s) paste(strwrap(s, width = width), collapse = "\n"), character(1))
@@ -31,7 +31,7 @@ pA <- ggplot(cov, aes(factor(context, levels=ord), factor(shortmod(module), leve
   geom_tile(aes(fill=coverage), colour="white", linewidth=.35) +
   scale_fill_gradient(low="#A6123C", high="#EAF2FB", limits=c(0.3,1)) +
   labs(x=NULL, y="module (short labels; see legend file)", title=wrap_title("A  Module gene coverage per disease context (dark red = low, pale = complete)")) + th() +
-  theme(axis.text.x=element_text(size=8.2), axis.text.y=element_text(size=7.5))
+  theme(axis.text.x=element_text(size=8.5), axis.text.y=element_text(size=8.3))
 reg <- read.csv(file.path(R,"v12_cohort_registry.csv"), stringsAsFactors=FALSE); reg$context <- ctxmap[reg$accession]
 cc <- reg %>% filter(accession!="GSE16879")
 long <- cc %>% group_by(context) %>%
@@ -42,7 +42,7 @@ long <- cc %>% group_by(context) %>%
 pB <- ggplot(long, aes(factor(context, levels=ord), n)) + geom_col(fill="#3C6E9F", width=.68) +
   facet_wrap(~measure, nrow=3, scales="free_y") +
   labs(x=NULL, y=NULL, title=wrap_title("B  Cohort composition by context")) + th() +
-  theme(axis.text.x=element_text(size=8.2))
+  theme(axis.text.x=element_text(size=8.5))
 aud <- read.csv(file.path(R,"v12_sc_dataset_audit.csv"), stringsAsFactors=FALSE)
 aud$lab <- ifelse(aud$arms=="excluded",
                   paste0(aud$context, ": excluded, tumour tissue only"),
@@ -50,7 +50,7 @@ aud$lab <- ifelse(aud$arms=="excluded",
 pC <- ggplot(aud, aes(reorder(lab, cells_used), cells_used)) + geom_col(fill="#7FA8C9", width=.66) + coord_flip() +
   scale_y_continuous(expand=expansion(mult=c(0,.12))) +
   labs(x=NULL, y="single cells used", title=wrap_title("C  Single-cell datasets and comparison arms")) + th() +
-  theme(axis.text.y=element_text(size=8))
+  theme(axis.text.y=element_text(size=8.3))
 fig1 <- pA / pB / pC
 ggsave(file.path(F,"Fig1_resource_overview.png"), fig1, width=W, height=9.3, dpi=300, limitsize=FALSE)
 ggsave(file.path(F,"Fig1_resource_overview.pdf"), fig1, width=W, height=9.3)
@@ -63,15 +63,15 @@ exc <- data.frame(label=c("Adenocarcinoma samples excluded (squamous oesophageal
                           "Single-cell comparisons not testable (donor overlap <5, not disjoint)"),
                   n=c(89,1277,117266,358,80))
 p2a <- ggplot(exc, aes(factor(label, levels=rev(label)), n)) + geom_col(fill="#A6123C", width=.62) +
-  geom_text(aes(label=format(n, big.mark=",")), hjust=-0.08, size=3.1, colour="grey25") + coord_flip() +
+  geom_text(aes(label=format(n, big.mark=",")), hjust=-0.08, size=3.2, colour="#1A1A1A") + coord_flip() +
   scale_y_log10(expand=expansion(mult=c(0,.32))) +
   labs(x=NULL, y="records (log scale)", title=wrap_title("A  Exclusions, flags and non-testable comparisons")) + th() +
-  theme(axis.text.y=element_text(size=7.8))
+  theme(axis.text.y=element_text(size=8.3))
 tt <- as.data.frame(table(scc$test_used)); names(tt) <- c("test","n")
 p2b <- ggplot(tt, aes(n, reorder(test, n))) + geom_col(fill="#14457B", width=.62) +
-  geom_text(aes(label=n), hjust=-0.15, size=3.1, colour="grey25") + scale_x_continuous(expand=expansion(mult=c(0,.2))) +
+  geom_text(aes(label=n), hjust=-0.15, size=3.2, colour="#1A1A1A") + scale_x_continuous(expand=expansion(mult=c(0,.2))) +
   labs(x="number of comparisons", y=NULL, title=wrap_title("B  Single-cell comparison design used")) + th() +
-  theme(axis.text.y=element_text(size=7.8))
+  theme(axis.text.y=element_text(size=8.3))
 pc <- read.csv(file.path(R,"v12_percohort_effects.csv"), stringsAsFactors=FALSE)
 p2c <- ggplot(pc[is.finite(pc$yi),], aes(yi)) + geom_histogram(bins=26, fill="#3C6E9F", colour="white", linewidth=.2) +
   facet_wrap(~measure, nrow=2, scales="free_y") + geom_vline(xintercept=0, linetype="dashed", colour="grey35") +
@@ -88,7 +88,7 @@ p3a <- ggplot(con, aes(factor(disease, levels=ord), concordance)) +
   stat_summary(fun=median, geom="crossbar", width=.45, colour="#A6123C", linewidth=.45) +
   labs(x=NULL, y="fraction same direction", tag="165 pairs",
        title=wrap_title("A  Cross-cohort direction consistency (points: pairs, bar: median)")) + th(9.5) +
-  theme(axis.text.x=element_text(size=8.2))
+  theme(axis.text.x=element_text(size=8.5))
 sen <- read.csv(file.path(R,"v13_qc_coverage_threshold_sensitivity.csv"), stringsAsFactors=FALSE)
 sen$scenario <- factor(sen$scenario, levels=c("all cohorts","coverage >= 0.60","coverage >= 0.80","coverage >= 0.90"))
 summ <- sen %>% group_by(scenario) %>% summarise(pairs=n(), sig=sum(fdr<0.05, na.rm=TRUE), .groups="drop") %>%
@@ -98,13 +98,13 @@ p3b <- ggplot(summ, aes(scenario, n, fill=measure)) + geom_col(position=position
   scale_fill_manual(values=c(pairs="#9FBFD8", sig="#A6123C")) + scale_y_continuous(expand=expansion(mult=c(0,.18))) +
   labs(x="cohorts below the coverage threshold excluded", y="count",
        title=wrap_title("B  Coverage-threshold sensitivity (light: pairs, red: significant)")) + th(9.5) +
-  theme(axis.text.x=element_text(size=7.8))
+  theme(axis.text.x=element_text(size=8.2))
 so <- read.csv(file.path(R,"v13_qc_signature_overlap.csv"), stringsAsFactors=FALSE)
 p3c <- ggplot(so, aes(reorder(shortmod(module), as.numeric(frac_overlap_xcell)), as.numeric(frac_overlap_xcell))) +
   geom_col(width=.6, fill="#7FA8C9") + coord_flip() + geom_hline(yintercept=0.2, linetype="dashed", colour="#A6123C") +
   labs(x=NULL, y="fraction of members in xCell panel",
        title=wrap_title("C  Module vs xCell overlap (20% dashed)")) + th(9.5) +
-  theme(axis.text.y=element_text(size=7.5))
+  theme(axis.text.y=element_text(size=8.3))
 vif <- read.csv(file.path(R,"v13_qc_vif_by_predictor.csv"), stringsAsFactors=FALSE)
 vif$r2 <- as.numeric(vif$r2_overall); vif$v <- as.numeric(vif$max_vif_predictor)
 p3d <- ggplot(vif, aes(r2, v)) + geom_point(size=1.8, colour="#14457B") + geom_hline(yintercept=5, linetype="dashed", colour="#A6123C") +
@@ -121,11 +121,11 @@ cg$status <- ifelse(grepl("insufficient", cg$flag, ignore.case=TRUE), "grey",
              ifelse(grepl("disagreement", cg$flag, ignore.case=TRUE), "red", "blue"))
 cg$v <- ifelse(is.na(cg$spearman), 0, cg$spearman); cg$lab <- ifelse(is.na(cg$spearman), "n.a.", sprintf("%.2f", cg$spearman))
 p4a <- ggplot(cg, aes(reorder(shortmod(module), v), v, fill=status)) + geom_col(width=.62) + coord_flip() +
-  scale_fill_manual(values=c(blue="#14457B", red="#A6123C", grey="grey65")) +
-  geom_text(aes(label=lab), hjust=-0.12, size=3.1, colour="grey25") + scale_y_continuous(limits=c(0,1.15)) +
+  scale_fill_manual(values=c(blue="#14457B", red="#A6123C", grey="#9A9A9A")) +
+  geom_text(aes(label=lab), hjust=-0.12, size=3.2, colour="#1A1A1A") + scale_y_continuous(limits=c(0,1.15)) +
   labs(x=NULL, y="Spearman rho (full vs common-gene scoring)",
        title=wrap_title("A  Common-gene sensitivity (red: disagreement in >=20% of cohorts; grey: not scorable)")) + th(9.5) +
-  theme(axis.text.y=element_text(size=8))
+  theme(axis.text.y=element_text(size=8.3))
 col <- read.csv(file.path(R,"v13_qc_vif_by_predictor.csv"), stringsAsFactors=FALSE)
 p4b <- ggplot(col, aes(as.numeric(r2_overall))) + geom_histogram(bins=12, fill="#7FA8C9", colour="white") +
   geom_vline(xintercept=median(as.numeric(col$r2_overall)), linetype="dashed", colour="#A6123C") +

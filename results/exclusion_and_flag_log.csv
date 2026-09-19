@@ -1,0 +1,10 @@
+item,n,reason,layer
+TCGA-ESCA adenocarcinoma samples excluded from the squamous oesophageal layer,89,patient-level DISEASE_TYPE = adenocarcinoma; the source study contains both histologies,TCGA-derived
+In utero cells excluded from the gastric single-cell dataset,1277,control_vs_disease = inutero; not a case or control tissue,single-cell
+Lung adenocarcinoma single-cell dataset excluded entirely,117266,source dataset contains tumour tissue only (no normal/adjacent arm),single-cell
+Malignant-labelled cells inside non-tumour colorectal samples flagged,358,"raw label inconsistent with tissue type; retained but flagged, not reassigned",single-cell
+Single-cell comparisons reported as not testable,80,donor overlap below five complete pairs and arms not donor-disjoint; independence cannot be assumed,single-cell
+GSE16879 lacks case-control contrast for module scoring,43,all assay records belong to one disease arm in the processed matrix used here; retained for registry transparency,bulk
+"Treatment-response series excluded from case-control resource (GSE16879, Responder vs NonResponder)",43,"design is treatment response, not case-control; listed in the registry with its design flag",bulk
+Cohorts analysed as unpaired because no patient identifiers are provided,9,patient-level pairing cannot be established; flagged in the registry and in the per-cohort table,bulk
+Cohorts reclassified as paired after metadata-driven audit,3,"GSE41258, GSE13911 and GSE179285 contain >=4 patients with both arms; previously analysed as unpaired",statistics
