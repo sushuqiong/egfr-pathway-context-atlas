@@ -1,0 +1,5 @@
+donor_set,comparisons,testable,not_testable,significant_family_bh,significant_celltype_family_bh,significant_global_bh,donors_min,pairs_min
+no minimum,240,160,80,37,53,35,3,5
+>= 10 cells per donor,200,152,48,41,49,30,3,5
+>= 20 cells per donor,184,136,48,32,39,22,3,5
+>= 50 cells per donor,160,136,24,30,40,20,3,5

@@ -1,0 +1,241 @@
+threshold,context,module,cell_type,comparison_type,n_donors_a,n_donors_b,n_testable,test_used,p_used,fdr_family,fdr_celltype_family,fdr_global
+0,CRC,ERBB_RECEPTORS,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.3125,0.5625,0.3125,0.5208333333333334
+0,CRC,ERBB_RECEPTORS,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.00390625,0.017578125,0.00390625,0.023148148148148147
+0,CRC,ERBB_RECEPTORS,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.09423828125,0.28271484375,0.09423828125,0.23197115384615385
+0,CRC,ERBB_RECEPTORS,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.8077392578125,0.979949951171875,0.8077392578125,0.9502814797794118
+0,CRC,ERBB_RECEPTORS,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,0.84375,0.979949951171875,0.84375,0.9507042253521126
+0,CRC,ERBB_RECEPTORS,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.979949951171875,0.979949951171875,0.979949951171875,1.0
+0,CRC,ERBB_RECEPTORS,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.000965118408203125,0.008686065673828125,0.000965118408203125,0.009083467371323529
+0,CRC,ERBB_RECEPTORS,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.19091796875,0.4295654296875,0.19091796875,0.37712191358024694
+0,CRC,ERBB_RECEPTORS,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.9658203125,0.979949951171875,0.9658203125,1.0
+0,CRC,ERBB_RECEPTORS,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.005620854016306688,0.022483416065226754,0.005620854016306688,0.032119165807466786
+0,CRC,ERBB_RECEPTORS,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.31046872117647717,0.36200459928309214,0.31046872117647717,0.5208333333333334
+0,CRC,ERBB_RECEPTORS,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.07046646391957853,0.14093292783915706,0.07046646391957853,0.18483006929725518
+0,CRC,ERBB_RECEPTORS,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,0.36200459928309214,0.36200459928309214,0.36200459928309214,0.5792073588529475
+0,CRC,ERBB_LIGANDS,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,1.0,1.0,1.0,1.0
+0,CRC,ERBB_LIGANDS,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.16015625,0.2515869140625,0.16015625,0.3327922077922078
+0,CRC,ERBB_LIGANDS,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.167724609375,0.2515869140625,0.167724609375,0.3440504807692308
+0,CRC,ERBB_LIGANDS,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.0067138671875,0.05172157287597656,0.0067138671875,0.035807291666666664
+0,CRC,ERBB_LIGANDS,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,1.0,1.0,1.0,1.0
+0,CRC,ERBB_LIGANDS,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.01987795848991416,0.05172157287597656,0.01987795848991416,0.07228348541786968
+0,CRC,ERBB_LIGANDS,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.02298736572265625,0.05172157287597656,0.02298736572265625,0.0797872340425532
+0,CRC,ERBB_LIGANDS,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.01708984375,0.05172157287597656,0.01708984375,0.06510416666666667
+0,CRC,ERBB_LIGANDS,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.5146697234497355,0.6617182158639456,0.5146697234497355,0.6928105714942226
+0,CRC,ERBB_LIGANDS,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.12724442536190791,0.12724442536190791,0.12724442536190791,0.29084440082721813
+0,CRC,ERBB_LIGANDS,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.04250587260759833,0.05667449681013111,0.04250587260759833,0.1333517572003085
+0,CRC,ERBB_LIGANDS,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,1.0725439213938592e-05,2.1450878427877184e-05,1.0725439213938592e-05,0.00019067447491446385
+0,CRC,ERBB_LIGANDS,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,6.399391648293543e-06,2.1450878427877184e-05,6.399391648293543e-06,0.0001462718091038524
+0,CRC,VEGF_PDGF_AXIS,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.84375,0.94921875,0.84375,0.9507042253521126
+0,CRC,VEGF_PDGF_AXIS,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.232421875,0.298828125,0.232421875,0.4274425287356322
+0,CRC,VEGF_PDGF_AXIS,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.001708984375,0.0076904296875,0.001708984375,0.013671875
+0,CRC,VEGF_PDGF_AXIS,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.0001220703125,0.0010986328125,0.0001220703125,0.001953125
+0,CRC,VEGF_PDGF_AXIS,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,1.0,1.0,1.0,1.0
+0,CRC,VEGF_PDGF_AXIS,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.009185791015625,0.018896484375,0.009185791015625,0.04595588235294118
+0,CRC,VEGF_PDGF_AXIS,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.0033416748046875,0.0100250244140625,0.0033416748046875,0.02138671875
+0,CRC,VEGF_PDGF_AXIS,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.010498046875,0.018896484375,0.010498046875,0.04799107142857143
+0,CRC,VEGF_PDGF_AXIS,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.0673828125,0.10107421875,0.0673828125,0.1796875
+0,CRC,VEGF_PDGF_AXIS,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.2776166836902608,0.2776166836902608,0.2776166836902608,0.4881172460488103
+0,CRC,VEGF_PDGF_AXIS,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,9.395335375356418e-07,1.8790670750712836e-06,9.395335375356418e-07,3.7581341501425674e-05
+0,CRC,VEGF_PDGF_AXIS,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,7.249412946708817e-08,2.899765178683527e-07,7.249412946708817e-08,3.866353571578036e-06
+0,CRC,VEGF_PDGF_AXIS,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,2.4134039921577795e-06,3.217871989543706e-06,2.4134039921577795e-06,7.722892774904894e-05
+0,CRC,HGF_MET_AXIS,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.1484375,0.333984375,0.1484375,0.3254191489485608
+0,CRC,HGF_MET_AXIS,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.064453125,0.193359375,0.064453125,0.1796875
+0,CRC,HGF_MET_AXIS,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.635498046875,0.8043757365241004,0.635498046875,0.79437255859375
+0,CRC,HGF_MET_AXIS,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.0166015625,0.07470703125,0.0166015625,0.06478658536585366
+0,CRC,HGF_MET_AXIS,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,0.7150006546880893,0.8043757365241004,0.7150006546880893,0.8800008057699561
+0,CRC,HGF_MET_AXIS,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.979949951171875,0.979949951171875,0.979949951171875,1.0
+0,CRC,HGF_MET_AXIS,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.002399444580078125,0.021595001220703125,0.002399444580078125,0.01745050603693182
+0,CRC,HGF_MET_AXIS,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.497314453125,0.7459716796875,0.497314453125,0.6928105714942226
+0,CRC,HGF_MET_AXIS,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.23672357063785732,0.42610242714814317,0.23672357063785732,0.4304064920688315
+0,CRC,HGF_MET_AXIS,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.014208482470532934,0.01894464329404391,0.014208482470532934,0.05829121013551973
+0,CRC,HGF_MET_AXIS,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.00022329188894647858,0.0007863933351138713,0.00022329188894647858,0.0032478820210396883
+0,CRC,HGF_MET_AXIS,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.0003931966675569356,0.0007863933351138713,0.0003931966675569356,0.004831788696472215
+0,CRC,HGF_MET_AXIS,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,0.04638094131066185,0.04638094131066185,0.04638094131066185,0.1427105886481903
+0,CRC,EPH_RECEPTORS,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.0234375,0.052734375,0.0234375,0.0797872340425532
+0,CRC,EPH_RECEPTORS,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.013671875,0.052734375,0.013671875,0.05756578947368421
+0,CRC,EPH_RECEPTORS,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.5302845968336095,0.5965701714378107,0.5302845968336095,0.7070461291114793
+0,CRC,EPH_RECEPTORS,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.5015869140625,0.5965701714378107,0.5015869140625,0.6928105714942226
+0,CRC,EPH_RECEPTORS,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,0.5001842570707944,0.5965701714378107,0.5001842570707944,0.6928105714942226
+0,CRC,EPH_RECEPTORS,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.01824951171875,0.052734375,0.01824951171875,0.06790515988372094
+0,CRC,EPH_RECEPTORS,malignant cell,tumour-vs-adjacent,28,20,1,paired,3.814697265625e-06,3.4332275390625e-05,3.814697265625e-06,0.00010172526041666667
+0,CRC,EPH_RECEPTORS,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.0478515625,0.0861328125,0.0478515625,0.14445754716981132
+0,CRC,EPH_RECEPTORS,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.7988593499960496,0.7988593499960496,0.7988593499960496,0.9502814797794118
+0,CRC,EPH_RECEPTORS,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.000867652370143851,0.001735304740287702,0.000867652370143851,0.00867652370143851
+0,CRC,EPH_RECEPTORS,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,5.10077001841921e-08,2.040308007367684e-07,5.10077001841921e-08,3.866353571578036e-06
+0,CRC,EPH_RECEPTORS,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.009226058407522594,0.012301411210030125,0.009226058407522594,0.04595588235294118
+0,CRC,EPH_RECEPTORS,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,0.016527931992040976,0.016527931992040976,0.016527931992040976,0.06478658536585366
+0,CRC,JAK_STAT,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.84375,0.84375,0.84375,0.9507042253521126
+0,CRC,JAK_STAT,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.083984375,0.23531341552734375,0.083984375,0.21329365079365079
+0,CRC,JAK_STAT,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.039794921875,0.1790771484375,0.039794921875,0.12734375
+0,CRC,JAK_STAT,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.0067138671875,0.0604248046875,0.0067138671875,0.035807291666666664
+0,CRC,JAK_STAT,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,0.15625,0.28125,0.15625,0.33141416555337844
+0,CRC,JAK_STAT,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.104583740234375,0.23531341552734375,0.104583740234375,0.25094658735036984
+0,CRC,JAK_STAT,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.5152778625488281,0.661376953125,0.5152778625488281,0.6928105714942226
+0,CRC,JAK_STAT,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.587890625,0.661376953125,0.587890625,0.7585685483870968
+0,CRC,JAK_STAT,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.46484375,0.661376953125,0.46484375,0.6823394495412844
+0,CRC,JAK_STAT,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.0004227815109413188,0.0016911260437652753,0.0004227815109413188,0.004831788696472215
+0,CRC,JAK_STAT,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.45785645107132533,0.6104752680951004,0.45785645107132533,0.6823394495412844
+0,CRC,JAK_STAT,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.22918988375501026,0.4583797675100205,0.22918988375501026,0.42639978373025167
+0,CRC,JAK_STAT,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,0.8306867728877789,0.8306867728877789,0.8306867728877789,0.9507042253521126
+0,CRC,SRC_FAK,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.546875,1.0,0.546875,0.7231404958677686
+0,CRC,SRC_FAK,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,1.0,1.0,1.0,1.0
+0,CRC,SRC_FAK,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.946044921875,1.0,0.946044921875,1.0
+0,CRC,SRC_FAK,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.5830078125,1.0,0.5830078125,0.7583841463414634
+0,CRC,SRC_FAK,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,1.0,1.0,1.0,1.0
+0,CRC,SRC_FAK,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.0506591796875,0.4559326171875,0.0506591796875,0.15010127314814814
+0,CRC,SRC_FAK,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.21011734008789062,0.9455280303955078,0.21011734008789062,0.4050454748682229
+0,CRC,SRC_FAK,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.83935546875,1.0,0.83935546875,0.9507042253521126
+0,CRC,SRC_FAK,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.46484375,1.0,0.46484375,0.6823394495412844
+0,CRC,SRC_FAK,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.021135011133147256,0.08454004453258902,0.021135011133147256,0.07514670625119024
+0,CRC,SRC_FAK,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.10508388345296737,0.21016776690593475,0.10508388345296737,0.25094658735036984
+0,CRC,SRC_FAK,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.5100675275575344,0.6800900367433792,0.5100675275575344,0.6928105714942226
+0,CRC,SRC_FAK,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,0.9014807480105274,0.9014807480105274,0.9014807480105274,0.9879241074087971
+0,CRC,WNT_CTNNB1,BEST4+ colonocyte,tumour-vs-adjacent,9,16,1,paired,0.9453125,0.9453125,0.9453125,1.0
+0,CRC,WNT_CTNNB1,colon goblet cell,tumour-vs-adjacent,14,17,1,paired,0.009765625,0.029296875,0.009765625,0.04595588235294118
+0,CRC,WNT_CTNNB1,colonocyte,tumour-vs-adjacent,14,20,1,paired,0.305419921875,0.39268275669642855,0.305419921875,0.5198636968085106
+0,CRC,WNT_CTNNB1,early colonocyte,tumour-vs-adjacent,18,20,1,paired,0.0008544921875,0.00384521484375,0.0008544921875,0.00867652370143851
+0,CRC,WNT_CTNNB1,enteroendocrine cell of colon,tumour-vs-adjacent,9,15,1,paired,0.21875,0.39268275669642855,0.21875,0.4117647058823529
+0,CRC,WNT_CTNNB1,intestinal crypt stem cell of colon,tumour-vs-adjacent,21,20,1,paired,0.09344482421875,0.2102508544921875,0.09344482421875,0.23197115384615385
+0,CRC,WNT_CTNNB1,malignant cell,tumour-vs-adjacent,28,20,1,paired,0.000335693359375,0.003021240234375,0.000335693359375,0.004475911458333333
+0,CRC,WNT_CTNNB1,secretory cell,tumour-vs-adjacent,19,18,1,paired,0.305419921875,0.39268275669642855,0.305419921875,0.5198636968085106
+0,CRC,WNT_CTNNB1,tuft cell of colon,tumour-vs-adjacent,16,18,1,paired,0.4130859375,0.4647216796875,0.4130859375,0.6294642857142857
+0,CRC,WNT_CTNNB1,malignant cell vs BEST4+ colonocyte,cell-identity,28,16,1,cell-identity unpaired,0.003838910992924945,0.003838910992924945,0.003838910992924945,0.023148148148148147
+0,CRC,WNT_CTNNB1,malignant cell vs colonocyte,cell-identity,28,20,1,cell-identity unpaired,6.452360010171335e-08,2.580944004068534e-07,6.452360010171335e-08,3.866353571578036e-06
+0,CRC,WNT_CTNNB1,malignant cell vs early colonocyte,cell-identity,28,20,1,cell-identity unpaired,0.002512724684929381,0.0033502995799058414,0.002512724684929381,0.017479823895160913
+0,CRC,WNT_CTNNB1,malignant cell vs secretory cell,cell-identity,28,18,1,cell-identity unpaired,8.78008568536683e-06,1.756017137073366e-05,8.78008568536683e-06,0.00017560171370733659
+0,IBD,ERBB_RECEPTORS,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.03199741435035553,0.053329023917259216,0.03199741435035553,0.10448135298075276
+0,IBD,ERBB_RECEPTORS,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.7502693385046326,0.7502693385046326,0.7502693385046326,0.9094173800056153
+0,IBD,ERBB_RECEPTORS,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.012142718755417867,0.030356796888544667,0.012142718755417867,0.053967638912968297
+0,IBD,ERBB_RECEPTORS,plasma cell,case-vs-healthy,12,6,1,unpaired,0.3845076492135316,0.48063456151691447,0.3845076492135316,0.6031492536682849
+0,IBD,ERBB_RECEPTORS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.001292824822236587,0.006464124111182934,0.001292824822236587,0.010886945871465995
+0,IBD,ERBB_LIGANDS,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.8916181857358327,0.8916181857358328,0.8916181857358327,0.9838545497774707
+0,IBD,ERBB_LIGANDS,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.5532212885154062,0.6915266106442577,0.5532212885154062,0.7255361160857785
+0,IBD,ERBB_LIGANDS,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.0020469726352079294,0.010234863176039647,0.0020469726352079294,0.015595981982536604
+0,IBD,ERBB_LIGANDS,plasma cell,case-vs-healthy,12,6,1,unpaired,0.24962292609351436,0.4160382101558573,0.24962292609351436,0.44377409083291447
+0,IBD,ERBB_LIGANDS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.06679594914889034,0.16698987287222583,0.06679594914889034,0.1796875
+0,IBD,VEGF_PDGF_AXIS,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.33548804137039434,0.559146735617324,0.33548804137039434,0.5477355777475826
+0,IBD,VEGF_PDGF_AXIS,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.8916181857358327,0.9635854341736694,0.8916181857358327,0.9838545497774707
+0,IBD,VEGF_PDGF_AXIS,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.9635854341736694,0.9635854341736694,0.9635854341736694,1.0
+0,IBD,VEGF_PDGF_AXIS,plasma cell,case-vs-healthy,12,6,1,unpaired,0.1797026502908856,0.44925662572721403,0.1797026502908856,0.3639547347663506
+0,IBD,VEGF_PDGF_AXIS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.013466925231631115,0.06733462615815558,0.013466925231631115,0.05756578947368421
+0,IBD,HGF_MET_AXIS,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.3947683705715457,0.6579472842859094,0.3947683705715457,0.6073359547254549
+0,IBD,HGF_MET_AXIS,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.009696186166774402,0.04848093083387201,0.009696186166774402,0.04595588235294118
+0,IBD,HGF_MET_AXIS,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.7786177188876373,0.7786177188876373,0.7786177188876373,0.9366829700903907
+0,IBD,HGF_MET_AXIS,plasma cell,case-vs-healthy,12,6,1,unpaired,0.6057226196064835,0.7571532745081044,0.6057226196064835,0.7753249530962989
+0,IBD,HGF_MET_AXIS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.06679594914889034,0.16698987287222583,0.06679594914889034,0.1796875
+0,IBD,EPH_RECEPTORS,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.8882172187345627,0.8882172187345627,0.8882172187345627,0.9838545497774707
+0,IBD,EPH_RECEPTORS,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.33548804137039434,0.43308885144261244,0.33548804137039434,0.5477355777475826
+0,IBD,EPH_RECEPTORS,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.20515220237474951,0.43308885144261244,0.20515220237474951,0.40029698024341365
+0,IBD,EPH_RECEPTORS,plasma cell,case-vs-healthy,12,6,1,unpaired,0.34647108115409,0.43308885144261244,0.34647108115409,0.5599532624712565
+0,IBD,EPH_RECEPTORS,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.08306399482870072,0.41531997414350363,0.08306399482870072,0.21329365079365079
+0,IBD,JAK_STAT,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.15050635638870935,0.1881329454858867,0.15050635638870935,0.3254191489485608
+0,IBD,JAK_STAT,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.001292824822236587,0.006464124111182934,0.001292824822236587,0.010886945871465995
+0,IBD,JAK_STAT,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.003232062055591467,0.008080155138978667,0.003232062055591467,0.02138671875
+0,IBD,JAK_STAT,plasma cell,case-vs-healthy,12,6,1,unpaired,0.49364361129067014,0.49364361129067014,0.49364361129067014,0.6928105714942226
+0,IBD,JAK_STAT,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.1246498599439776,0.1881329454858867,0.1246498599439776,0.2890431534932814
+0,IBD,SRC_FAK,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.21288515406162467,0.31202865761689297,0.21288515406162467,0.4054955315459518
+0,IBD,SRC_FAK,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.6164619694031459,0.6164619694031459,0.6164619694031459,0.7828088500357409
+0,IBD,SRC_FAK,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.1246498599439776,0.31202865761689297,0.1246498599439776,0.2890431534932814
+0,IBD,SRC_FAK,plasma cell,case-vs-healthy,12,6,1,unpaired,0.15050635638870935,0.31202865761689297,0.15050635638870935,0.3254191489485608
+0,IBD,SRC_FAK,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.24962292609351436,0.31202865761689297,0.24962292609351436,0.44377409083291447
+0,IBD,WNT_CTNNB1,T cell of anorectum,case-vs-healthy,12,6,1,unpaired,0.8200818789054083,0.9635854341736694,0.8200818789054083,0.9507042253521126
+0,IBD,WNT_CTNNB1,colon epithelial cell,case-vs-healthy,12,6,1,unpaired,0.03199741435035553,0.15998707175177765,0.03199741435035553,0.10448135298075276
+0,IBD,WNT_CTNNB1,myeloid cell,case-vs-healthy,12,6,1,unpaired,0.9635854341736694,0.9635854341736694,0.9635854341736694,1.0
+0,IBD,WNT_CTNNB1,plasma cell,case-vs-healthy,12,6,1,unpaired,0.3845076492135316,0.8227393521511169,0.3845076492135316,0.6031492536682849
+0,IBD,WNT_CTNNB1,stromal cell of lamina propria of colon,case-vs-healthy,12,6,1,unpaired,0.49364361129067014,0.8227393521511169,0.49364361129067014,0.6928105714942226
+0,STAD,ERBB_RECEPTORS,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.8041551811226735,0.8041551811226735,0.8041551811226735,0.9502814797794118
+0,STAD,ERBB_RECEPTORS,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_RECEPTORS,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.18240213455574372,0.36480426911148744,0.18240213455574372,0.36480426911148744
+0,STAD,ERBB_RECEPTORS,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,1.0,1.0,1.0,1.0
+0,STAD,ERBB_LIGANDS,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,ERBB_LIGANDS,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.15742172863785475,0.3148434572757095,0.15742172863785475,0.33141416555337844
+0,STAD,ERBB_LIGANDS,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.14740688856687892,0.29481377713375784,0.14740688856687892,0.3254191489485608
+0,STAD,VEGF_PDGF_AXIS,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,VEGF_PDGF_AXIS,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.29769176632568695,0.29769176632568695,0.29769176632568695,0.5177248110011946
+0,STAD,VEGF_PDGF_AXIS,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.06639318527112506,0.13278637054225012,0.06639318527112506,0.1796875
+0,STAD,HGF_MET_AXIS,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,HGF_MET_AXIS,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.38863289978858195,0.38863289978858195,0.38863289978858195,0.6037015919045933
+0,STAD,HGF_MET_AXIS,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.06639318527112506,0.13278637054225012,0.06639318527112506,0.1796875
+0,STAD,EPH_RECEPTORS,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,EPH_RECEPTORS,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.6901624220695128,0.6901624220695128,0.6901624220695128,0.8560154072180004
+0,STAD,EPH_RECEPTORS,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.6236797393048898,0.7378177311481033,0.6236797393048898,0.7857382542423809
+0,STAD,JAK_STAT,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,JAK_STAT,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.7378177311481033,0.7378177311481033,0.7378177311481033,0.9011514273564621
+0,STAD,JAK_STAT,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.5005804129627163,0.9872172569425267,0.5005804129627163,0.6928105714942226
+0,STAD,SRC_FAK,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,SRC_FAK,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.9872172569425267,0.9872172569425267,0.9872172569425267,1.0
+0,STAD,SRC_FAK,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,BEST4+ enterocyte,tumour-vs-adjacent,5,7,1,unpaired,0.5129899106370105,0.5129899106370105,0.5129899106370105,0.6928105714942226
+0,STAD,WNT_CTNNB1,enterocyte,tumour-vs-adjacent,19,19,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,enteroendocrine cell,tumour-vs-adjacent,23,24,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,epithelial cell,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,foveolar cell of stomach,tumour-vs-adjacent,28,33,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,intestine goblet cell,tumour-vs-adjacent,22,19,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,mucous neck cell of gastric gland,tumour-vs-adjacent,27,33,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,parietal cell,tumour-vs-adjacent,19,30,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,peptic cell,tumour-vs-adjacent,19,28,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,type EC enteroendocrine cell,tumour-vs-adjacent,21,27,0,not testable,nan,nan,nan,nan
+0,STAD,WNT_CTNNB1,type G enteroendocrine cell,tumour-vs-adjacent,13,24,1,unpaired,0.45317731610358036,0.5129899106370105,0.45317731610358036,0.6823394495412844
+0,STAD,WNT_CTNNB1,type X enteroendocrine cell,tumour-vs-adjacent,13,25,0,not testable,nan,nan,nan,nan

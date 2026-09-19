@@ -204,6 +204,18 @@ three_line(doc,["Analysis","Comparisons","Not testable","Significant, FDR < 0.05
  ["Sensitivity 1: only donors contributing at least ten cells per cell type and arm", len(_scs), _nt2, _fam2],
  ["Sensitivity 2: same donors, single BH correction across all comparisons", len(_scs), _nt2, _gl2],
  ["Primary under a single BH correction across all comparisons (for reference)", len(scp), _prim_nt, _glp]],8)
+head(doc,"Supplementary Table S18. Single-cell sensitivity: donor-abundance thresholds and multiplicity definitions")
+_g=rd(os.path.join(PK,"06_single_cell","single_cell_threshold_gradient.csv"))
+three_line(doc,["Donor set","Comparisons","Testable","Not testable","Significant: comparison-type family","Significant: cell-type family","Significant: global"],
+  [[r["donor_set"],r["comparisons"],r["testable"],r["not_testable"],r["significant_family_bh"],r["significant_celltype_family_bh"],r["significant_global_bh"]] for r in _g],8)
+head(doc,"Supplementary Table S19. Cross-cohort direction consistency: where the disagreement sits")
+_d=rd(os.path.join(PK,"08_qc","qc_cross_cohort_disagreement_summary.csv"))
+three_line(doc,["Metric","Value"],[[r["metric"],r["value"]] for r in _d],8)
+_dc=rd(os.path.join(PK,"08_qc","qc_cross_cohort_disagreement_detail.csv"))
+_inc=[r for r in _dc if str(r["direction_consistent"]).upper()!="TRUE"][:12]
+doc.add_paragraph("First twelve discordant pairs (complete table shipped as 08_qc/qc_cross_cohort_disagreement_detail.csv):")
+three_line(doc,["Context","Module","Cohorts","Pattern","Cohorts positive","Cohorts negative"],
+  [[r["context"],r["module"],r["k"],r["pattern"],r["positive_cohorts"],r["negative_cohorts"]] for r in _inc],8)
 tp=os.path.join(OUT,"Tables_v14.docx"); doc.save(tp); print("tables:",tp)
 # ---------- 4. legends ----------
 L=Document(); st2=L.styles['Normal']; st2.font.name='Times New Roman'; st2.font.size=Pt(11)

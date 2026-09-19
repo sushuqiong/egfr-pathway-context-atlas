@@ -1,0 +1,11 @@
+metric,value
+pairs with at least two cohorts,165
+pairs consistent in every cohort,112
+pairs with at least one discordant cohort,53
+inconsistent pairs with k = 2,21
+inconsistent pairs with k = 3,32
+inconsistent pairs decided by a single opposing cohort,53
+inconsistent pairs by context (top),NAFLD 10; IBD 7; PAAD 6; STAD 6
+inconsistent pairs by module (top),FGFR_AXIS 7; SRC_FAK 5; ERBB_RECEPTORS 5; TIE_ANGPT_AXIS 4
+consistency among pairs with k >= 5,0/0 (0%)
+consistency among pairs with k = 2,45/66
